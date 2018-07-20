@@ -1,37 +1,14 @@
-import { trigger, state, style } from "@angular/animations";
-import Animation from "./QAnimation";
-import Transition from "./QTransition";
-import Style from "./QStyle";
-import State from "./QState";
-import Trigger from "./QTrigger";
+import HighlightAnimationPattern from "./HighlightAnimationPattern";
+import { AnimationTriggerMetadata } from "@angular/animations";
 
-// function highlightAnimation(initialColor?: string, finalColor?: string) {
-//   return trigger("highlight", [
-//     new State("inactive", new Style({ backgroundColor: "white" })).state(),
-//     new State("active", new Style({ backgroundColor: "yellow" })).state(),
-//     new Transition().transition(),
-//     new Transition(
-//       "active => inactive",
-//       new Animation(100, "ease-out")
-//     ).transition()
-//   ]);
-// }
+interface HighlightAnimationParams {
+  finalColor?: string;
+  initialColor?: string;
+  duration?: number;
+}
 
-function highlightAnimation(initialColor?: string, finalColor?: string) {
-  return new Trigger(
-    "highlight",
-    [
-      new State("inactive", new Style({ backgroundColor: "white" })),
-      new State(
-        "active",
-        new Style({ backgroundColor: "red", transform: "scale(1.2)" })
-      )
-    ],
-    [
-      new Transition(),
-      new Transition("active => inactive", new Animation(100, "ease-out"))
-    ]
-  ).trigger();
+function highlightAnimation(params: HighlightAnimationParams = {}): AnimationTriggerMetadata {
+  return new HighlightAnimationPattern(params.finalColor, params.duration).getTrigger();
 }
 
 export default highlightAnimation;

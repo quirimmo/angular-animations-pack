@@ -10,49 +10,11 @@ import {
   transition
 } from "@angular/animations";
 
+import HighlightAnimationPattern from "./HighlightAnimationPattern";
+
 @NgModule({
   imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
   declarations: []
 })
 export class AngularAnimationsPackModule {}
-
-export const heroStateAnimation = function() {
-  return trigger("heroState", [
-    state(
-      "inactive",
-      style({
-        transform: "scale(1)"
-      })
-    ),
-    state(
-      "active",
-      style({
-        transform: "scale(1.1)"
-      })
-    ),
-    transition("inactive => active", animate("100ms ease-in")),
-    transition("active => inactive", animate("100ms ease-out"))
-  ]);
-};
-
-export const heroStateAnimation2 = function() {
-  return trigger("heroState2", [
-    state(
-      "inactive",
-      style({
-        backgroundColor: "#eee"
-      })
-    ),
-    state(
-      "active",
-      style({
-        backgroundColor: "#cfd8dc"
-      })
-    ),
-    transition("inactive => active", animate("100ms ease-in")),
-    transition("active => inactive", animate("100ms ease-out"))
-  ]);
-};
-
-
-// export const highlightAnimation = highlightAnimation;
+export const highlightAnimation = HighlightAnimationPattern;

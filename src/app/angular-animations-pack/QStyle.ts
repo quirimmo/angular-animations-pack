@@ -5,7 +5,7 @@ interface AnimationStyleProperties {
 }
 
 class Style {
-  constructor(public styleProperties: AnimationStyleProperties) {}
+  constructor(public styleProperties: AnimationStyleProperties = {}) {}
 
   style(): AnimationStyleMetadata {
     return style(this.styleProperties);
