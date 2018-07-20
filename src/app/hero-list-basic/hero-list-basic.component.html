@@ -1,5 +1,12 @@
-<ul>
+<ul *ngIf="displayElement()">
   <li class="hero-list-item" *ngFor="let hero of heroes" [@highlight]="hero.state" [@scale]="hero.state" (click)="hero.toggleState()">
     {{hero.name}}
   </li>
 </ul>
+<div>
+  <p>
+    <button (click)="showElement()">
+      {{buttonText}} Element
+    </button>
+  </p>
+</div>
