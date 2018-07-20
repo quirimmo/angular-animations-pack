@@ -10,11 +10,13 @@ import {
   transition
 } from "@angular/animations";
 
-import HighlightAnimationPattern from "./HighlightAnimationPattern";
+import highlightAnimationPattern from "./highlight-animation";
+import scaleAnimationPattern from "./scale-animation";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
   declarations: []
 })
 export class AngularAnimationsPackModule {}
-export const highlightAnimation = HighlightAnimationPattern;
+export const highlightAnimation = highlightAnimationPattern;
+export const scaleAnimation = scaleAnimationPattern;

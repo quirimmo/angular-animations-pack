@@ -8,7 +8,9 @@ class AnimationPattern {
     public triggerName: string,
     public stateList: Array<State>,
     public transitionList: Array<Transition>
-  ) {}
+  ) {
+    console.log(this.triggerName);
+  }
 
   getTrigger(): AnimationTriggerMetadata {
     return new Trigger(
