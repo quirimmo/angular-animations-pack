@@ -1,0 +1,6 @@
+<ul>
+  <!-- <li class="hero-list-item" *ngFor="let hero of heroes" [@highlight]="hero.state" [@heroState]="hero.state" [@heroState2]="hero.state" (click)="hero.toggleState()"> -->
+  <li class="hero-list-item" *ngFor="let hero of heroes" [@highlight]="hero.state" (click)="hero.toggleState()">
+    {{hero.name}}
+  </li>
+</ul>
