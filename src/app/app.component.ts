@@ -13,5 +13,6 @@ export class AppComponent {
   ngOnInit() {
     this.heroes.push(new Hero('quirino'));
     this.heroes.push(new Hero('chopper'));
+    this.heroes.push(new Hero('cicciabenza'));
   }
 }

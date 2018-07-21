@@ -10,7 +10,8 @@ import {
 import { Hero } from "./hero.service";
 import {
   highlightAnimationFn,
-  scaleAnimationFn
+  scaleAnimationFn,
+  flyHorizontalAnimationFn
 } from "../angular-animations-pack/angular-animations-pack.module";
 
 @Component({
@@ -18,8 +19,9 @@ import {
   templateUrl: "./hero-list-basic.component.html",
   styleUrls: ["./hero-list-basic.component.css"],
   animations: [
-    highlightAnimationFn(),
-    scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0 })
+    // highlightAnimationFn(),
+    flyHorizontalAnimationFn(),
+    // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0 })
   ]
 })
 export class HeroListBasicComponent {
