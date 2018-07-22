@@ -1,44 +1,41 @@
-import { Component, Input } from "@angular/core";
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition
-} from "@angular/animations";
+import { Component, Input } from '@angular/core';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
-import { Hero } from "./hero.service";
+import { Hero } from './hero.service';
 import {
   highlightAnimationFn,
   scaleAnimationFn,
   flyHorizontalAnimationFn,
   flyVerticalAnimationFn,
   rotateAnimationFn,
-  fadeAnimationFn
-} from "../angular-animations-pack/angular-animations-pack.module";
+  fadeAnimationFn,
+  bounceVerticalAnimationFn
+} from '../angular-animations-pack/angular-animations-pack.module';
 
 @Component({
-  selector: "app-hero-list-basic",
-  templateUrl: "./hero-list-basic.component.html",
-  styleUrls: ["./hero-list-basic.component.css"],
+  selector: 'app-hero-list-basic',
+  templateUrl: './hero-list-basic.component.html',
+  styleUrls: ['./hero-list-basic.component.css'],
   animations: [
     // highlightAnimationFn(),
     // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0 }),
     // flyVerticalAnimationFn({ includeVoidTransitions: true }),
     // flyHorizontalAnimationFn({ includeVoidTransitions: true })
     // rotateAnimationFn({ includeVoidTransitions: true })
-    fadeAnimationFn({ includeVoidTransitions: true, voidFadeValue: 0.5 })
+    // fadeAnimationFn({ includeVoidTransitions: true, voidFadeValue: 0.5 })
+    bounceVerticalAnimationFn({ includeVoidTransitions: true })
   ]
 })
 export class HeroListBasicComponent {
   @Input() heroes: Hero[];
-  private isElementVisible: boolean = false;
-  public buttonText: string = "Show";
+  private isElementVisible = false;
+  public buttonText = 'Show';
+  public redBlock = 'inactive';
 
   showElement(): void {
     this.reset();
     this.isElementVisible = !this.isElementVisible;
-    this.buttonText = this.isElementVisible ? "Hide" : "Show";
+    this.buttonText = this.isElementVisible ? 'Hide' : 'Show';
   }
 
   displayElement(): boolean {
@@ -47,7 +44,7 @@ export class HeroListBasicComponent {
 
   private reset(): void {
     this.heroes.forEach(hero => {
-      hero.state = "inactive";
+      hero.state = 'inactive';
     });
   }
 }

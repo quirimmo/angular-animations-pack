@@ -1,9 +1,9 @@
-import AnimationPattern from "./AnimationPattern";
-import State from "./QState";
-import Style from "./QStyle";
-import Transition from "./QTransition";
-import Animation from "./QAnimation";
-import { AnimationTriggerMetadata } from "@angular/animations";
+import AnimationPattern from './AnimationPattern';
+import State from './QState';
+import Style from './QStyle';
+import Transition from './QTransition';
+import Animation from './QAnimation';
+import { AnimationTriggerMetadata } from '@angular/animations';
 
 export interface FlyVerticalAnimationParams {
   flyHorizontalValue?: number;
@@ -12,9 +12,7 @@ export interface FlyVerticalAnimationParams {
   voidFlyHorizontalValue?: number;
 }
 
-export function flyVerticalAnimation(
-  params: FlyVerticalAnimationParams = {}
-): AnimationTriggerMetadata {
+export function flyVerticalAnimation(params: FlyVerticalAnimationParams = {}): AnimationTriggerMetadata {
   return new FlyVerticalAnimationPattern(
     params.flyHorizontalValue,
     params.duration,
@@ -31,21 +29,15 @@ export class FlyVerticalAnimationPattern extends AnimationPattern {
     public voidFlyVerticalValue: number = -100
   ) {
     super(
-      "flyVertical",
+      'flyVertical',
       [
-        new State("void", new Style({ transform: `translateY(${voidFlyVerticalValue}%)` })),
-        new State("inactive", new Style()),
-        new State("active", new Style({ transform: `translateY(${flyVerticalValue}%)` }))
+        new State('void', new Style({ transform: `translateY(${voidFlyVerticalValue}%)` })),
+        new State('inactive', new Style()),
+        new State('active', new Style({ transform: `translateY(${flyVerticalValue}%)` }))
       ],
       [
-        new Transition(
-          "inactive => active",
-          new Animation(duration, "ease-in")
-        ),
-        new Transition(
-          "active => inactive",
-          new Animation(duration, "ease-out")
-        )
+        new Transition('inactive => active', new Animation(duration, 'ease-in')),
+        new Transition('active => inactive', new Animation(duration, 'ease-out'))
       ],
       includeVoidTransitions
     );
