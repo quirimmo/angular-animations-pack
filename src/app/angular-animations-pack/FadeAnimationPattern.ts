@@ -5,37 +5,37 @@ import Transition from "./QTransition";
 import Animation from "./QAnimation";
 import { AnimationTriggerMetadata } from "@angular/animations";
 
-export interface FlyHorizontalAnimationParams {
-  flyHorizontalValue?: number;
+export interface FadeAnimationParams {
+  fadeValue?: number;
   duration?: number;
   includeVoidTransitions?: boolean;
-  voidFlyHorizontalValue?: number;
+  voidFadeValue?: number;
 }
 
-export function flyHorizontalAnimation(
-  params: FlyHorizontalAnimationParams = {}
+export function fadeAnimation(
+  params: FadeAnimationParams = {}
 ): AnimationTriggerMetadata {
-  return new FlyHorizontalAnimationPattern(
-    params.flyHorizontalValue,
+  return new FadeAnimationPattern(
+    params.fadeValue,
     params.duration,
     params.includeVoidTransitions,
-    params.voidFlyHorizontalValue
+    params.voidFadeValue
   ).getTrigger();
 }
 
-export class FlyHorizontalAnimationPattern extends AnimationPattern {
+export class FadeAnimationPattern extends AnimationPattern {
   constructor(
-    public flyHorizontalValue: number = 100,
+    public fadeValue: number = 1,
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
-    public voidFlyHorizontalValue: number = -100
+    public voidFadeValue: number = 0
   ) {
     super(
-      "flyHorizontal",
+      "fade",
       [
-        new State("void", new Style({ transform: `translateX(${voidFlyHorizontalValue}%)` })),
+        new State("void", new Style({ opacity: voidFadeValue })),
         new State("inactive", new Style()),
-        new State("active", new Style({ transform: `translateX(${flyHorizontalValue}%)` }))
+        new State("active", new Style({ opacity: fadeValue }))
       ],
       [
         new Transition(

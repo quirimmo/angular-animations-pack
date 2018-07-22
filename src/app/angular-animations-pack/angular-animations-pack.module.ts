@@ -13,6 +13,9 @@ import {
 import { scaleAnimation } from "./ScaleAnimationPattern";
 import { highlightAnimation } from "./HighlightAnimationPattern";
 import { flyHorizontalAnimation } from "./FlyHorizontalAnimationPattern";
+import { flyVerticalAnimation } from "./FlyVerticalAnimationPattern";
+import { rotateAnimation } from "./RotateAnimationPattern";
+import { fadeAnimation } from "./FadeAnimationPattern";
 
 @NgModule({
   imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
@@ -22,3 +25,7 @@ export class AngularAnimationsPackModule {}
 export const highlightAnimationFn = highlightAnimation;
 export const scaleAnimationFn = scaleAnimation;
 export const flyHorizontalAnimationFn = flyHorizontalAnimation;
+export const flyVerticalAnimationFn = flyVerticalAnimation;
+export const rotateAnimationFn = rotateAnimation;
+export const fadeAnimationFn = fadeAnimation;
+

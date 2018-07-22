@@ -5,17 +5,17 @@ import Transition from "./QTransition";
 import Animation from "./QAnimation";
 import { AnimationTriggerMetadata } from "@angular/animations";
 
-export interface FlyHorizontalAnimationParams {
+export interface FlyVerticalAnimationParams {
   flyHorizontalValue?: number;
   duration?: number;
   includeVoidTransitions?: boolean;
   voidFlyHorizontalValue?: number;
 }
 
-export function flyHorizontalAnimation(
-  params: FlyHorizontalAnimationParams = {}
+export function flyVerticalAnimation(
+  params: FlyVerticalAnimationParams = {}
 ): AnimationTriggerMetadata {
-  return new FlyHorizontalAnimationPattern(
+  return new FlyVerticalAnimationPattern(
     params.flyHorizontalValue,
     params.duration,
     params.includeVoidTransitions,
@@ -23,19 +23,19 @@ export function flyHorizontalAnimation(
   ).getTrigger();
 }
 
-export class FlyHorizontalAnimationPattern extends AnimationPattern {
+export class FlyVerticalAnimationPattern extends AnimationPattern {
   constructor(
-    public flyHorizontalValue: number = 100,
+    public flyVerticalValue: number = 100,
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
-    public voidFlyHorizontalValue: number = -100
+    public voidFlyVerticalValue: number = -100
   ) {
     super(
-      "flyHorizontal",
+      "flyVertical",
       [
-        new State("void", new Style({ transform: `translateX(${voidFlyHorizontalValue}%)` })),
+        new State("void", new Style({ transform: `translateY(${voidFlyVerticalValue}%)` })),
         new State("inactive", new Style()),
-        new State("active", new Style({ transform: `translateX(${flyHorizontalValue}%)` }))
+        new State("active", new Style({ transform: `translateY(${flyVerticalValue}%)` }))
       ],
       [
         new Transition(
