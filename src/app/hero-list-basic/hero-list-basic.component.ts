@@ -9,7 +9,8 @@ import {
   flyVerticalAnimationFn,
   rotateAnimationFn,
   fadeAnimationFn,
-  bounceVerticalAnimationFn
+  bounceVerticalAnimationFn,
+  bounceHorizontalAnimationFn
 } from '../angular-animations-pack/angular-animations-pack.module';
 
 @Component({
@@ -23,12 +24,20 @@ import {
     // flyHorizontalAnimationFn({ includeVoidTransitions: true })
     // rotateAnimationFn({ includeVoidTransitions: true })
     // fadeAnimationFn({ includeVoidTransitions: true, voidFadeValue: 0.5 })
-    bounceVerticalAnimationFn({
+    // bounceVerticalAnimationFn({
+    //   includeVoidTransitions: true,
+    //   animationStyleProperties: [
+    //     { opacity: 0, translation: '-100%', offset: 0 },
+    //     { opacity: 1, translation: '-15px', offset: 0.3 },
+    //     { opacity: 1, translation: '0', offset: 1.0 }
+    //   ]
+    // })
+    bounceHorizontalAnimationFn({
       includeVoidTransitions: true,
       animationStyleProperties: [
-        { opacity: 0, transform: 'translateX(-100%)', offset: 0 },
-        { opacity: 1, transform: 'translateX(-15px)', offset: 0.3 },
-        { opacity: 1, transform: 'translateX(0)', offset: 1.0 }
+        { opacity: 0, translation: '-100%', offset: 0 },
+        { opacity: 1, translation: '-15px', offset: 0.3 },
+        { opacity: 1, translation: '0', offset: 1.0 }
       ]
     })
   ]

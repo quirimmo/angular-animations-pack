@@ -5,25 +5,26 @@ import { AnimationTriggerMetadata } from '@angular/animations';
 import AnimationStyleProperties from './QAnimationStyleProperties';
 import KeyframeAnimationPattern from './QKeyframeAnimationPattern';
 
-interface BounceVerticalMovements {
+interface BounceHorizontalMovements {
   opacity: number;
   translation: string;
   offset: number;
 }
 
-export interface BounceVerticalAnimationParams {
+export interface BounceHorizontalAnimationParams {
   duration?: number;
   includeVoidTransitions?: boolean;
-  animationStyleProperties?: Array<BounceVerticalMovements>;
+  animationStyleProperties?: Array<BounceHorizontalMovements>;
 }
 
-export function bounceVerticalAnimation(params: BounceVerticalAnimationParams = {}): AnimationTriggerMetadata {
-  const bounceStyleProperties: Array<AnimationStyleProperties> = BounceVerticalAnimationPattern.convertStylePropertiesToBounceProperties(
+export function bounceHorizontalAnimation(params: BounceHorizontalAnimationParams = {}): AnimationTriggerMetadata {
+  const bounceStyleProperties: Array<AnimationStyleProperties> = BounceHorizontalAnimationPattern.convertStylePropertiesToBounceProperties(
     params
   );
-  return new BounceVerticalAnimationPattern(params.duration, params.includeVoidTransitions, bounceStyleProperties).getTrigger();
+  return new BounceHorizontalAnimationPattern(params.duration, params.includeVoidTransitions, bounceStyleProperties).getTrigger();
 }
-export class BounceVerticalAnimationPattern extends KeyframeAnimationPattern {
+
+export class BounceHorizontalAnimationPattern extends KeyframeAnimationPattern {
   public animationPattern: AnimationPattern;
 
   constructor(
@@ -32,15 +33,15 @@ export class BounceVerticalAnimationPattern extends KeyframeAnimationPattern {
     public animationStyleProperties: Array<AnimationStyleProperties> = []
   ) {
     super(
-      'bounceVertical',
-      [new State('inactive', new Style({ transform: 'translateY(0)' }))],
+      'bounceHorizontal',
+      [new State('inactive', new Style({ transform: 'translateX(0)' }))],
       animationStyleProperties,
       duration,
       includeVoidTransitions
     );
   }
 
-  static convertStylePropertiesToBounceProperties(params: BounceVerticalAnimationParams): Array<AnimationStyleProperties> {
+  static convertStylePropertiesToBounceProperties(params: BounceHorizontalAnimationParams): Array<AnimationStyleProperties> {
     const bounceStyleProperties: Array<AnimationStyleProperties> = [];
     params.animationStyleProperties = params.animationStyleProperties || [];
     params.animationStyleProperties.forEach(el => {
@@ -48,7 +49,7 @@ export class BounceVerticalAnimationPattern extends KeyframeAnimationPattern {
       for (const k in el) {
         if (el.hasOwnProperty(k)) {
           if (k === 'translation') {
-            obj['transform'] = `translateY(${el[k]})`;
+            obj['transform'] = `translateX(${el[k]})`;
           } else {
             obj[k] = el[k];
           }
