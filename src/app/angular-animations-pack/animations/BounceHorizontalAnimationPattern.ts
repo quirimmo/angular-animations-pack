@@ -1,9 +1,9 @@
-import AnimationPattern from './AnimationPattern';
-import State from './QState';
-import Style from './QStyle';
+import AnimationPattern from '../entities/QAnimationPattern';
+import State from '../entities/QState';
+import Style from '../entities/QStyle';
 import { AnimationTriggerMetadata } from '@angular/animations';
-import AnimationStyleProperties from './QAnimationStyleProperties';
-import KeyframeAnimationPattern from './QKeyframeAnimationPattern';
+import AnimationStyleProperties from '../entities/QAnimationStyleProperties';
+import KeyframeAnimationPattern from '../entities/QKeyframeAnimationPattern';
 
 interface BounceHorizontalMovements {
   opacity: number;

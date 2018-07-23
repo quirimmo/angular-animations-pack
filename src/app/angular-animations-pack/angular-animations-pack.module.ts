@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 
-import { scaleAnimation } from './ScaleAnimationPattern';
-import { highlightAnimation } from './HighlightAnimationPattern';
-import { flyHorizontalAnimation } from './FlyHorizontalAnimationPattern';
-import { flyVerticalAnimation } from './FlyVerticalAnimationPattern';
-import { rotateAnimation } from './RotateAnimationPattern';
-import { fadeAnimation } from './FadeAnimationPattern';
-import { bounceVerticalAnimation } from './BounceVerticalAnimationPattern';
-import { bounceHorizontalAnimation } from './BounceHorizontalAnimationPattern';
+import { scaleAnimation } from './animations/ScaleAnimationPattern';
+import { highlightAnimation } from './animations/HighlightAnimationPattern';
+import { flyHorizontalAnimation } from './animations/FlyHorizontalAnimationPattern';
+import { flyVerticalAnimation } from './animations/FlyVerticalAnimationPattern';
+import { rotateAnimation } from './animations/RotateAnimationPattern';
+import { fadeAnimation } from './animations/FadeAnimationPattern';
+import { bounceVerticalAnimation } from './animations/BounceVerticalAnimationPattern';
+import { bounceHorizontalAnimation } from './animations/BounceHorizontalAnimationPattern';
 
 @NgModule({
   imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
