@@ -1,4 +1,4 @@
-import AnimationPattern from './AnimationPattern';
+import AnimationPattern from './QAnimationPattern';
 import State from './QState';
 import Style from './QStyle';
 import Transition from './QTransition';

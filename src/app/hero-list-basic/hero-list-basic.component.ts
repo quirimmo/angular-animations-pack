@@ -23,7 +23,14 @@ import {
     // flyHorizontalAnimationFn({ includeVoidTransitions: true })
     // rotateAnimationFn({ includeVoidTransitions: true })
     // fadeAnimationFn({ includeVoidTransitions: true, voidFadeValue: 0.5 })
-    bounceVerticalAnimationFn({ includeVoidTransitions: true })
+    bounceVerticalAnimationFn({
+      includeVoidTransitions: true,
+      animationStyleProperties: [
+        { opacity: 0, transform: 'translateX(-100%)', offset: 0 },
+        { opacity: 1, transform: 'translateX(-15px)', offset: 0.3 },
+        { opacity: 1, transform: 'translateX(0)', offset: 1.0 }
+      ]
+    })
   ]
 })
 export class HeroListBasicComponent {
