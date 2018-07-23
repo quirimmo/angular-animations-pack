@@ -1,4 +1,4 @@
-import { state, style, AnimationStyleMetadata } from "@angular/animations";
+import { style, AnimationStyleMetadata } from '@angular/animations';
 
 interface AnimationStyleProperties {
   [key: string]: string | number;
