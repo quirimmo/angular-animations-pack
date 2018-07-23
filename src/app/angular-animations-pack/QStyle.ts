@@ -1,8 +1,5 @@
 import { style, AnimationStyleMetadata } from '@angular/animations';
-
-interface AnimationStyleProperties {
-  [key: string]: string | number;
-}
+import AnimationStyleProperties from './QAnimationStyleProperties';
 
 class Style {
   constructor(public styleProperties: AnimationStyleProperties = {}) {}
