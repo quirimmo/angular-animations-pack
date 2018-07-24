@@ -1,5 +1,17 @@
-<ul>
-  <li class="hero-list-item" *ngFor="let hero of heroes" [@highlight]="hero.state" [@scale]="hero.state" (click)="hero.toggleState()">
+<ul *ngIf="displayElement()">
+  <!-- <li class="hero-list-item" *ngFor="let hero of heroes" [@highlight]="hero.state" [@scale]="hero.state" (click)="hero.toggleState()"> -->
+  <!-- <li class="hero-list-item" *ngFor="let hero of heroes" [@flyVertical]="hero.state" [@flyHorizontal]="hero.state" (click)="hero.toggleState()"> -->
+  <li class="hero-list-item" *ngFor="let hero of heroes" [@flyVertical]="hero.state" (click)="hero.toggleState()">
     {{hero.name}}
   </li>
 </ul>
+<div>
+  <p>
+    <button (click)="showElement()">
+      {{buttonText}} Element
+    </button>
+  </p>
+</div>
+<div class="red-block" [@flyVertical]="redBlock" (mouseover)="redBlock = 'active';" (mouseout)="redBlock = 'inactive';">
+  RED BLOCK
+</div>

@@ -1,5 +1,5 @@
-import { state, AnimationStateMetadata } from "@angular/animations";
-import Style from "./QStyle";
+import { state, AnimationStateMetadata } from '@angular/animations';
+import Style from './QStyle';
 
 class State {
   constructor(public stateName: string, public style: Style) {}
