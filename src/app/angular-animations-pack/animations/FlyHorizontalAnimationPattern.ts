@@ -1,45 +1,22 @@
-import AnimationPattern from '../entities/QAnimationPattern';
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
-import Transition from '../entities/QTransition';
-import Animation from '../entities/QAnimation';
 import { AnimationTriggerMetadata } from '@angular/animations';
+import AbstractFlyAnimationPattern, { FlyAnimationParams } from './AbstractFlyAnimationPattern';
 
-export interface FlyHorizontalAnimationParams {
-  flyHorizontalValue?: number;
-  duration?: number;
-  includeVoidTransitions?: boolean;
-  voidFlyHorizontalValue?: number;
-}
-
-export function flyHorizontalAnimation(params: FlyHorizontalAnimationParams = {}): AnimationTriggerMetadata {
+export function flyHorizontalAnimation(params: FlyAnimationParams = {}): AnimationTriggerMetadata {
   return new FlyHorizontalAnimationPattern(
-    params.flyHorizontalValue,
+    params.flyValue,
     params.duration,
     params.includeVoidTransitions,
-    params.voidFlyHorizontalValue
+    params.voidFlyValue
   ).getTrigger();
 }
 
-export class FlyHorizontalAnimationPattern extends AnimationPattern {
+export class FlyHorizontalAnimationPattern extends AbstractFlyAnimationPattern {
   constructor(
-    public flyHorizontalValue: number = 100,
+    public flyValue: number = 100,
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
-    public voidFlyHorizontalValue: number = -100
+    public voidFlyValue: number = -100
   ) {
-    super(
-      'flyHorizontal',
-      [
-        new State('void', new Style({ transform: `translateX(${voidFlyHorizontalValue}%)` })),
-        new State('inactive', new Style()),
-        new State('active', new Style({ transform: `translateX(${flyHorizontalValue}%)` }))
-      ],
-      [
-        new Transition('inactive => active', new Animation(duration, 'ease-in')),
-        new Transition('active => inactive', new Animation(duration, 'ease-out'))
-      ],
-      includeVoidTransitions
-    );
+    super('flyHorizontal', false, flyValue, duration, includeVoidTransitions, voidFlyValue);
   }
 }

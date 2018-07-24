@@ -20,7 +20,7 @@ import {
   animations: [
     // highlightAnimationFn(),
     // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0 }),
-    // flyVerticalAnimationFn({ includeVoidTransitions: true }),
+    flyVerticalAnimationFn({ includeVoidTransitions: true }),
     // flyHorizontalAnimationFn({ includeVoidTransitions: true })
     // rotateAnimationFn({ includeVoidTransitions: true })
     // fadeAnimationFn({ includeVoidTransitions: true, voidFadeValue: 0.5 })
@@ -31,15 +31,16 @@ import {
     //     { opacity: 1, translation: '-15px', offset: 0.3 },
     //     { opacity: 1, translation: '0', offset: 1.0 }
     //   ]
+    // }),
+    // bounceHorizontalAnimationFn({
+    //   includeVoidTransitions: true,
+    //   animationStyleProperties: [
+    //     { opacity: 0, translation: '-100%', offset: 0 },
+    //     { opacity: 1, translation: '-15px', offset: 0.3 },
+    //     { opacity: 1, translation: '0', offset: 1.0 }
+    //     //
+    //   ]
     // })
-    bounceHorizontalAnimationFn({
-      includeVoidTransitions: true,
-      animationStyleProperties: [
-        { opacity: 0, translation: '-100%', offset: 0 },
-        { opacity: 1, translation: '-15px', offset: 0.3 },
-        { opacity: 1, translation: '0', offset: 1.0 }
-      ]
-    })
   ]
 })
 export class HeroListBasicComponent {
