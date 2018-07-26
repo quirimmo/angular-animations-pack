@@ -11,6 +11,8 @@ import { rotateAnimation } from './animations/RotateAnimationPattern';
 import { fadeAnimation } from './animations/FadeAnimationPattern';
 import { bounceVerticalAnimation } from './animations/BounceVerticalAnimationPattern';
 import { bounceHorizontalAnimation } from './animations/BounceHorizontalAnimationPattern';
+import { fillWidthAnimation } from './animations/FillWidthAnimationPattern';
+import { fillHeightAnimation } from './animations/FillHeightAnimationPattern';
 
 @NgModule({
   imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
@@ -25,3 +27,5 @@ export const rotateAnimationFn = rotateAnimation;
 export const fadeAnimationFn = fadeAnimation;
 export const bounceVerticalAnimationFn = bounceVerticalAnimation;
 export const bounceHorizontalAnimationFn = bounceHorizontalAnimation;
+export const fillWidthAnimationFn = fillWidthAnimation;
+export const fillHeightAnimationFn = fillHeightAnimation;
