@@ -13,6 +13,7 @@ import { bounceVerticalAnimation } from './animations/BounceVerticalAnimationPat
 import { bounceHorizontalAnimation } from './animations/BounceHorizontalAnimationPattern';
 import { fillWidthAnimation } from './animations/FillWidthAnimationPattern';
 import { fillHeightAnimation } from './animations/FillHeightAnimationPattern';
+import { appearAnimation } from './animations/AppearAnimationPattern';
 
 @NgModule({
   imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
@@ -29,3 +30,4 @@ export const bounceVerticalAnimationFn = bounceVerticalAnimation;
 export const bounceHorizontalAnimationFn = bounceHorizontalAnimation;
 export const fillWidthAnimationFn = fillWidthAnimation;
 export const fillHeightAnimationFn = fillHeightAnimation;
+export const appearAnimationFn = appearAnimation;

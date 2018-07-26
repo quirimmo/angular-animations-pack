@@ -12,7 +12,8 @@ import {
   rotateAnimationFn,
   fadeAnimationFn,
   bounceVerticalAnimationFn,
-  bounceHorizontalAnimationFn
+  bounceHorizontalAnimationFn,
+  appearAnimationFn
 } from '../angular-animations-pack/angular-animations-pack.module';
 
 @Component({
@@ -21,9 +22,10 @@ import {
   styleUrls: ['./hero-list-basic.component.css'],
   animations: [
     // highlightAnimationFn(),
-    // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0 }),
-    fillWidthAnimationFn({ size: '100px' }),
-    fillHeightAnimationFn({ size: '50px' })
+    // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0, duration: 1000 }),
+    appearAnimationFn({ duration: 100 }),
+    // fillWidthAnimationFn({ size: '100px' }),
+    // fillHeightAnimationFn({ size: '50px' })
     // flyVerticalAnimationFn({ includeVoidTransitions: true }),
     // flyHorizontalAnimationFn({ includeVoidTransitions: true })
     // rotateAnimationFn({ includeVoidTransitions: true })
