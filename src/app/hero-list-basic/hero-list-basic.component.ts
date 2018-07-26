@@ -7,6 +7,8 @@ import {
   scaleAnimationFn,
   flyHorizontalAnimationFn,
   flyVerticalAnimationFn,
+  fillWidthAnimationFn,
+  fillHeightAnimationFn,
   rotateAnimationFn,
   fadeAnimationFn,
   bounceVerticalAnimationFn,
@@ -20,7 +22,9 @@ import {
   animations: [
     // highlightAnimationFn(),
     // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0 }),
-    flyVerticalAnimationFn({ includeVoidTransitions: true }),
+    fillWidthAnimationFn({ size: '100px' }),
+    fillHeightAnimationFn({ size: '50px' })
+    // flyVerticalAnimationFn({ includeVoidTransitions: true }),
     // flyHorizontalAnimationFn({ includeVoidTransitions: true })
     // rotateAnimationFn({ includeVoidTransitions: true })
     // fadeAnimationFn({ includeVoidTransitions: true, voidFadeValue: 0.5 })

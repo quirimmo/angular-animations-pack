@@ -1,9 +1,6 @@
-import AnimationStyleProperties from '../entities/QAnimationStyleProperties';
-import KeyframeAnimationPattern from '../entities/QKeyframeAnimationPattern';
 import State from '../entities/QState';
 import Style from '../entities/QStyle';
 import AnimationPattern from '../entities/QAnimationPattern';
-import { AnimationTriggerMetadata } from '../../../../node_modules/@angular/animations';
 import Animation from '../entities/QAnimation';
 import Transition from '../entities/QTransition';
 
