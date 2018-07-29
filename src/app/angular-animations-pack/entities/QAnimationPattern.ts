@@ -1,9 +1,5 @@
-import { AnimationTriggerMetadata } from '@angular/animations';
-import Trigger from './QTrigger';
 import State from './QState';
 import Transition from './QTransition';
-import Animation from './QAnimation';
-import KeyframeAnimation from './QKeyframeAnimation';
 import AbstractAnimationPattern from './QAbstractAnimationPattern';
 
 class AnimationPattern extends AbstractAnimationPattern {
