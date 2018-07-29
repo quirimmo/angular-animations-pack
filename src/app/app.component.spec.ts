@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { DebugElement } from '../../node_modules/@angular/core';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
@@ -33,6 +33,6 @@ fdescribe('AppComponent', () => {
 
   it('should render an app-hero-list-basic component', async(() => {
     const heroesElement: DebugElement = fixture.nativeElement.querySelector('app-hero-list-basic');
-    expect(heroesElement).toBeDefined();
+    expect(heroesElement).not.toBeNull();
   }));
 });
