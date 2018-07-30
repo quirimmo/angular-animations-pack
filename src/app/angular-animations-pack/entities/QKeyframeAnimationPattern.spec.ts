@@ -6,7 +6,7 @@ import KeyframeAnimation from './QKeyframeAnimation';
 
 const instance: KeyframeAnimationPattern = new KeyframeAnimationPattern('trigger', [], [], 100);
 
-fdescribe('KeyframeAnimation', () => {
+describe('KeyframeAnimation', () => {
   it('should be a class', () => {
     expect(KeyframeAnimationPattern).toEqual(jasmine.any(Function));
   });
