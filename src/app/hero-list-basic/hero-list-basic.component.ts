@@ -22,7 +22,7 @@ import {
   animations: [
     // highlightAnimationFn(),
     // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0, duration: 1000 }),
-    appearAnimationFn({ duration: 100 }),
+    appearAnimationFn({ duration: 100 })
     //
     // fillWidthAnimationFn({ size: '100px' }),
     // fillHeightAnimationFn({ size: '50px' })
