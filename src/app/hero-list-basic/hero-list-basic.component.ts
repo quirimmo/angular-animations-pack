@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import { Hero } from './hero.service';
 import {
@@ -24,6 +23,7 @@ import {
     // highlightAnimationFn(),
     // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0, duration: 1000 }),
     appearAnimationFn({ duration: 100 }),
+    //
     // fillWidthAnimationFn({ size: '100px' }),
     // fillHeightAnimationFn({ size: '50px' })
     // flyVerticalAnimationFn({ includeVoidTransitions: true }),

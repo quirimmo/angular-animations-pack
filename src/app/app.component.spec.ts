@@ -1,27 +1,38 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeroListBasicComponent } from './hero-list-basic/hero-list-basic.component';
+import { AngularAnimationsPackModule } from './angular-animations-pack/angular-animations-pack.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { DebugElement } from '../../node_modules/@angular/core';
+
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      declarations: [AppComponent, HeroListBasicComponent],
+      imports: [BrowserModule, BrowserAnimationsModule, AngularAnimationsPackModule]
     }).compileComponents();
   }));
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
-  }));
-  it('should render title in a h1 tag', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to angular-animations-pack!');
+  });
+
+  it('should create the component', async(() => {
+    expect(component).toBeTruthy();
+  }));
+
+  it(`should have as title 'app'`, async(() => {
+    expect(component.title).toEqual('app');
+  }));
+
+  it('should render an app-hero-list-basic component', async(() => {
+    const heroesElement: DebugElement = fixture.nativeElement.querySelector('app-hero-list-basic');
+    expect(heroesElement).not.toBeNull();
   }));
 });

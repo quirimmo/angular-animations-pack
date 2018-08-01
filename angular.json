@@ -121,6 +121,46 @@
           }
         }
       }
+    },
+    "angular-animations-library": {
+      "root": "projects/angular-animations-library",
+      "sourceRoot": "projects/angular-animations-library/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-animations-library/tsconfig.lib.json",
+            "project": "projects/angular-animations-library/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/angular-animations-library/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-animations-library/src/test.ts",
+            "tsConfig": "projects/angular-animations-library/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-animations-library/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-animations-library/tsconfig.lib.json",
+              "projects/angular-animations-library/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-animations-pack"

@@ -21,10 +21,10 @@ abstract class AbstractAnimationPattern {
     this.transitionList = transitionList;
     if (this.includeVoidTransitions) {
       const animation: AbstractAnimation = this.transitionList[0].animation;
-      const duration: number = animation.duration;
       if (animation instanceof KeyframeAnimation) {
         this.transitionList.push(new Transition('void <=> *', animation));
       } else {
+        const duration: number = animation.duration;
         this.transitionList.push(new Transition('void => *', new Animation(duration, 'ease-in')));
         this.transitionList.push(new Transition('* => void', new Animation(duration, 'ease-out')));
       }
