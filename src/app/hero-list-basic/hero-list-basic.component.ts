@@ -1,28 +1,48 @@
 import { Component, Input } from '@angular/core';
 
 import { Hero } from './hero.service';
-import {
-  highlightAnimationFn,
-  scaleAnimationFn,
-  flyHorizontalAnimationFn,
-  flyVerticalAnimationFn,
-  fillWidthAnimationFn,
-  fillHeightAnimationFn,
-  rotateAnimationFn,
-  fadeAnimationFn,
-  bounceVerticalAnimationFn,
-  bounceHorizontalAnimationFn,
-  appearAnimationFn
-} from '../angular-animations-pack/angular-animations-pack.module';
+import { highlightAnimationFn } from 'angular-animations-library';
+
+// import { highlightAnimation } from 'angular-animations-library';
+// import { highlightAnimation } from 'angular-animations-library';
+// import { appearAnimationFn } from 'projects/angular-animations-library/src/public_api';
+// import { appearAnimationFn } from 'angular-animations-library';
+
+// import { appearAnimationFunzione } from 'angular-animations-library';
+// import { appearAnimationFunzione } from 'projects/angular-animations-library/src/public_api';
+// import { appearAnimationFunzione } from 'dist/angular-animations-library/public_api';
+// import { appearAnimationFn } from 'projects/angular-animations-library/src/public_api';
+// import { appearAnimationFn } from 'dist/angular-animations-library';
+// import { appearAnimationFn } from 'dist/angular-animations-library/';
+
+// import {
+//   highlightAnimationFn,
+//   scaleAnimationFn,
+//   flyHorizontalAnimationFn,
+//   flyVerticalAnimationFn,
+//   fillWidthAnimationFn,
+//   fillHeightAnimationFn,
+//   rotateAnimationFn,
+//   fadeAnimationFn,
+//   bounceVerticalAnimationFn,
+//   bounceHorizontalAnimationFn,
+//   appearAnimationFn
+// } from '../angular-animations-pack/angular-animations-pack.module';
 
 @Component({
   selector: 'app-hero-list-basic',
   templateUrl: './hero-list-basic.component.html',
   styleUrls: ['./hero-list-basic.component.css'],
   animations: [
+    highlightAnimationFn({}),
+    //
+    // highlightAnimation
+    // appearAnimation(),
+    // appearAnimationFn()
+    // // appearAnimationFunzione()
     // highlightAnimationFn(),
     // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0, duration: 1000 }),
-    appearAnimationFn({ duration: 100 })
+    // appearAnimationFunzione({ duration: 100 })
     //
     // fillWidthAnimationFn({ size: '100px' }),
     // fillHeightAnimationFn({ size: '50px' })
