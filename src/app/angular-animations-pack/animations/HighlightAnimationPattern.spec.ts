@@ -4,26 +4,27 @@ import Style from '../entities/QStyle';
 import Transition from '../entities/QTransition';
 import Animation from '../entities/QAnimation';
 import { FadeAnimationPattern, fadeAnimation } from './FadeAnimationPattern';
+import { HighlightAnimationPattern, highlightAnimation } from './HighlightAnimationPattern';
 
-const instance: FadeAnimationPattern = new FadeAnimationPattern();
+const instance: HighlightAnimationPattern = new HighlightAnimationPattern();
 
-describe('FadeAnimationPattern', () => {
+describe('HighlightAnimationPattern', () => {
   it('should be a class', () => {
-    expect(FadeAnimationPattern).toEqual(jasmine.any(Function));
+    expect(HighlightAnimationPattern).toEqual(jasmine.any(Function));
   });
 
   it('should create an instance', () => {
-    expect(instance instanceof FadeAnimationPattern).toBeTruthy();
+    expect(instance instanceof HighlightAnimationPattern).toBeTruthy();
   });
 
-  it('should inherit from AbstractAnimation', () => {
+  it('should inherit from AnimationPattern', () => {
     expect(instance instanceof AnimationPattern).toBeTruthy();
   });
 
   it('should define the states', () => {
-    expect(instance.stateList).toContain(new State('void', new Style({ opacity: 1 })));
+    expect(instance.stateList).toContain(new State('void', new Style({ backgroundColor: 'yellow' })));
     expect(instance.stateList).toContain(new State('inactive', new Style()));
-    expect(instance.stateList).toContain(new State('active', new Style({ opacity: 0 })));
+    expect(instance.stateList).toContain(new State('active', new Style({ backgroundColor: 'yellow' })));
   });
 
   it('should define the transitions', () => {
@@ -32,8 +33,8 @@ describe('FadeAnimationPattern', () => {
   });
 });
 
-describe('fadeAnimation', () => {
+describe('highlightAnimation', () => {
   it('should return the trigger', () => {
-    expect(fadeAnimation()).toEqual(new FadeAnimationPattern().getTrigger());
+    expect(highlightAnimation()).toEqual(new HighlightAnimationPattern().getTrigger());
   });
 });
