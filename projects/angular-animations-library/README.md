@@ -17,7 +17,6 @@ An angular library which provides several animations, highly customisable, ready
   - [Highlight Animation](#highlight-animation)
   - [Rotate Animation](#rotate-animation)
   - [Scale Animation](#scale-animation)
-- [Developer Usage](#developer-usage)
 
 ---
 
@@ -50,6 +49,7 @@ There are two kind of animations:
 - **Complex Animations**
 
 The `Simple Animations` are based on simple linear style changes, while the `Complex Animations` are composed of style changes in different keyframes.
+
 In order to use an animation, import the corresponding function from the `angular-animations-library` module, and then call this function from
 the `animations` metadata of the component.
 
