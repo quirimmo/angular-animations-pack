@@ -7,10 +7,17 @@ import Animation from '../entities/QAnimation';
 export interface FillSizeAnimationParams {
   size?: string;
   duration?: number;
+  includeVoidTransition?: boolean;
 }
 
 export abstract class FillSizeAnimationPattern extends AnimationPattern {
-  constructor(public triggerName: string, public size: string = '100%', public duration: number = 100, public isHeight: boolean = false) {
+  constructor(
+    public triggerName: string,
+    public size: string = '100%',
+    public duration: number = 100,
+    public isHeight: boolean = false,
+    public includeVoidTransition: boolean = false
+  ) {
     super(
       triggerName,
       [new State('inactive', new Style()), new State('active', new Style(FillSizeAnimationPattern.getSize(size, isHeight)))],
@@ -18,7 +25,7 @@ export abstract class FillSizeAnimationPattern extends AnimationPattern {
         new Transition('inactive => active', new Animation(duration, 'ease-in')),
         new Transition('active => inactive', new Animation(duration, 'ease-out'))
       ],
-      false
+      includeVoidTransition
     );
   }
 

@@ -1,3 +1,2 @@
-Add default values to the bounce animations
 Add new animations using as pattern ng-animate
-Add parameter for includeVoidTransitions even to the Fill Size Animations
+Refactor the documentation in the readme to group the common things and simply use tables with data and snippet in the animations documentation

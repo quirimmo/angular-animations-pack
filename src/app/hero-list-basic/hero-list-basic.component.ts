@@ -34,7 +34,7 @@ import { highlightAnimationFn } from 'angular-animations-library';
   templateUrl: './hero-list-basic.component.html',
   styleUrls: ['./hero-list-basic.component.css'],
   animations: [
-    highlightAnimationFn({}),
+    // highlightAnimationFn({}),
     //
     // highlightAnimation
     // appearAnimation(),

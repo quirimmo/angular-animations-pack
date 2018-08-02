@@ -64,18 +64,7 @@ There are mainly two kind of animations:
 
 The `Simple Animations` are based on simple linear style changes, while the `Complex Animations` are composed of style changes in different keyframes.
 In order to use an animation, import the corresponding function from the `angular-animations-library` module, and then call this function from
-the `animations` metadata of the component, like in the following example:
-
-```javascript
-import { highlightAnimationFn } from 'angular-animations-library';
-@Component({
-  ...
-  animations: [
-    highlightAnimationFn()
-  ]
-  ...
-})
-```
+the `animations` metadata of the component.
 
 Every animation defines its trigger name, which will be used inside the HTML in order to embed the animation, and it defines 4 different states for every trigger:
 
@@ -110,12 +99,14 @@ There are two types of bounce animations:
 
 These animations are based on keyframes, so if you want to, you can specify new keyframes which differ from the default ones.
 
-The params of this kind of animation are an array of **_BounceAnimationStyleProperties_**, where each element represent a keyframe in the transition, and
+The parameters are an array of **_BounceAnimationStyleProperties_**, where each element represent a keyframe in the transition, and
 each element includes:
 
-1. **_opacity_**: A number which represents the opacity of the current keyframe
-2. **_translation_**: A string which represents the vertical or horizontal translation of the current keyframe
-3. **_offset_**: A number which represents the offset of the current keyframe
+| Parameter   | Type    | Description                                                         |
+| ----------- | ------- | ------------------------------------------------------------------- |
+| opacity     | number  | Opacity of the current keyframe                                     |
+| translation | string  | Vertical or horizontal movement of the current keyframe             |
+| offset      | number  | Offset of the current keyframe. It must be a value between 0 and 1. |
 
 ### Vertical Bounce Animation
 
@@ -201,3 +192,155 @@ These animations are simple animations, not based on keyframes but just on style
 The params of this kind of animation are an object **_FillSizeAnimationParams_**, which includes:
 
 1. **size**: A string representing the size to be filled, horizontally or vertically, so the width or the height
+
+### Fill Height Animation
+
+You can use a Fill Height Animation using the function **_`fillHeightAnimationFn`_** and passing in the parameters you have seen above for the fill size animations.
+In this case the parameter to specify for the size is the `height` property, as string.
+
+Inside your component, use the following code in order to import and call the Fill Height Animation:
+
+```javascript
+import { fillHeightAnimationFn } from 'angular-animations-library';
+
+@Component({
+  ...
+  animations: [
+    fillHeightAnimationFn()
+  ]
+  ...
+})
+```
+
+The default value is the following:
+
+```javascript
+{ height: '100%' }
+```
+
+Then inside your HTML you must use the trigger name ***`fillHeight`*** passing the state `active` when you want to trigger the animation, and `inactive` when you
+want to stop it.
+An example of the HTML code could be something like the following:
+
+```html
+<div class="red-block" [@fillHeight]="animationState" (mouseover)="animationState = 'active';" (mouseout)="animationState = 'inactive';">
+  ANIMATED BLOCK WITH FILL HEIGHT ANIMATION ON MOUSE OVER
+</div>
+```
+
+### Fill Width Animation
+
+You can use a Fill Width Animation using the function **_`fillWidthAnimationFn`_** and passing in the parameters you have seen above for the fill size animations.
+In this case the parameter to specify for the size is the `width` property, as string.
+
+Inside your component, use the following code in order to import and call the Fill Height Animation:
+
+```javascript
+import { fillWidthAnimationFn } from 'angular-animations-library';
+
+@Component({
+  ...
+  animations: [
+    fillWidthAnimationFn()
+  ]
+  ...
+})
+```
+
+The default value is the following:
+
+```javascript
+{ height: '100%' }
+```
+
+Then inside your HTML you must use the trigger name ***`fillWidth`*** passing the state `active` when you want to trigger the animation, and `inactive` when you
+want to stop it.
+An example of the HTML code could be something like the following:
+
+```html
+<div class="red-block" [@fillWidth]="animationState" (mouseover)="animationState = 'active';" (mouseout)="animationState = 'inactive';">
+  ANIMATED BLOCK WITH FILL WIDTH ANIMATION ON MOUSE OVER
+</div>
+```
+
+### Fly Animation
+
+There are two types of fly animations:
+
+1. **Vertical Fly**
+2. **Horizontal Fly**
+
+These animations are simple animations, not based on keyframes but just on styles transitions, and if you want to, you can specify new style properties which differ from the default ones.
+
+The params of this kind of animation are an object **_FlyAnimationParams_**, which includes:
+
+1. **flyValue**: A string representing the translation to be applied vertically or horizontally when the state is active
+2. **voidFlyValue**: A string representing the translation to be applied vertically or horizontally when the state is void
+
+### Vertical Fly Animation
+
+You can use a Vertical Fly Animation using the function **_`flyVerticalAnimationFn`_** and passing in the parameters you have seen above for the fly animations.
+
+Inside your component, use the following code in order to import and call the Fill Height Animation:
+
+```javascript
+import { flyVerticalAnimationFn } from 'angular-animations-library';
+
+@Component({
+  ...
+  animations: [
+    flyVerticalAnimationFn()
+  ]
+  ...
+})
+```
+
+The default values are the following:
+
+```javascript
+{ flyValue: 100, voidFlyValue: -100 }
+```
+
+Then inside your HTML you must use the trigger name ***`flyVertical`*** passing the state `active` when you want to trigger the animation, and `inactive` when you
+want to stop it.
+An example of the HTML code could be something like the following:
+
+```html
+<div class="red-block" [@flyVertical]="animationState" (mouseover)="animationState = 'active';" (mouseout)="animationState = 'inactive';">
+  ANIMATED BLOCK WITH VERTICAL FLY ANIMATION ON MOUSE OVER
+</div>
+```
+
+### Horizontal Fly Animation
+
+You can use a Horizontal Fly Animation using the function **_`flyHorizontalAnimationFn`_** and passing in the parameters you have seen above for the fly animations.
+
+Inside your component, use the following code in order to import and call the Fill Height Animation:
+
+```javascript
+import { flyHorizontalAnimationFn } from 'angular-animations-library';
+
+@Component({
+  ...
+  animations: [
+    flyHorizontalAnimationFn()
+  ]
+  ...
+})
+```
+
+The default values are the following:
+
+```javascript
+{ flyValue: 100, voidFlyValue: -100 }
+```
+
+Then inside your HTML you must use the trigger name ***`flyHorizontal`*** passing the state `active` when you want to trigger the animation, and `inactive` when you
+want to stop it.
+An example of the HTML code could be something like the following:
+
+```html
+<div class="red-block" [@flyHorizontal]="animationState" (mouseover)="animationState = 'active';" (mouseout)="animationState = 'inactive';">
+  ANIMATED BLOCK WITH HORIZONTAL FLY ANIMATION ON MOUSE OVER
+</div>
+```
