@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { Hero } from './hero.service';
-import { highlightAnimationFn } from 'angular-animations-library';
+// import { highlightAnimationFn } from 'angular-animations-library';
 
 // import { highlightAnimation } from 'angular-animations-library';
 // import { highlightAnimation } from 'angular-animations-library';
