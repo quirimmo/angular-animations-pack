@@ -13,18 +13,25 @@ export interface FadeAnimationParams {
 }
 
 export function fadeAnimation(params: FadeAnimationParams = {}): AnimationTriggerMetadata {
-  return new FadeAnimationPattern(params.fadeValue, params.duration, params.includeVoidTransitions, params.voidFadeValue).getTrigger();
+  return new FadeAnimationPattern(
+    'fade',
+    params.fadeValue,
+    params.duration,
+    params.includeVoidTransitions,
+    params.voidFadeValue
+  ).getTrigger();
 }
 
 export class FadeAnimationPattern extends AnimationPattern {
   constructor(
+    public trigger: string = 'fade',
     public fadeValue: number = 0,
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
     public voidFadeValue: number = 1
   ) {
     super(
-      'fade',
+      trigger,
       [
         new State('void', new Style({ opacity: voidFadeValue })),
         new State('inactive', new Style()),

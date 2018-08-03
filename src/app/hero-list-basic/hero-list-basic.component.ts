@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { Hero } from './hero.service';
+import { fadeInAnimationFn, fadeOutAnimationFn } from 'projects/angular-animations-library/src/public_api';
 // import { highlightAnimationFn } from 'angular-animations-library';
 
 // import { highlightAnimation } from 'angular-animations-library';
@@ -34,6 +35,9 @@ import { Hero } from './hero.service';
   templateUrl: './hero-list-basic.component.html',
   styleUrls: ['./hero-list-basic.component.css'],
   animations: [
+    fadeInAnimationFn(),
+    fadeOutAnimationFn()
+    // fadeInAnimationFn()
     // highlightAnimationFn({}),
     //
     // highlightAnimation
@@ -74,6 +78,7 @@ export class HeroListBasicComponent {
   private isElementVisible = false;
   public buttonText = 'Show';
   public redBlock = 'inactive';
+  public elementState = 'inactive';
 
   showElement(): void {
     this.reset();
@@ -82,6 +87,8 @@ export class HeroListBasicComponent {
   }
 
   displayElement(): boolean {
+    this.elementState = !this.isElementVisible ? 'active' : 'inactive';
+
     return this.isElementVisible;
   }
 

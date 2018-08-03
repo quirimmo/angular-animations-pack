@@ -9,6 +9,8 @@ import { bounceHorizontalAnimation } from './lib/animations/BounceHorizontalAnim
 import { fillWidthAnimation } from './lib/animations/FillWidthAnimationPattern';
 import { appearAnimation } from './lib/animations/AppearAnimationPattern';
 import { fillHeightAnimation } from './lib/animations/FillHeightAnimationPattern';
+import { fadeInAnimation } from './lib/animations/FadeInAnimationPattern';
+import { fadeOutAnimation } from './lib/animations/FadeOutAnimationPattern';
 /*
  * Public API Surface of angular-animations-library
  */
@@ -20,6 +22,8 @@ export const flyHorizontalAnimationFn = flyHorizontalAnimation;
 export const flyVerticalAnimationFn = flyVerticalAnimation;
 export const rotateAnimationFn = rotateAnimation;
 export const fadeAnimationFn = fadeAnimation;
+export const fadeInAnimationFn = fadeInAnimation;
+export const fadeOutAnimationFn = fadeOutAnimation;
 export const bounceVerticalAnimationFn = bounceVerticalAnimation;
 export const bounceHorizontalAnimationFn = bounceHorizontalAnimation;
 export const fillWidthAnimationFn = fillWidthAnimation;
