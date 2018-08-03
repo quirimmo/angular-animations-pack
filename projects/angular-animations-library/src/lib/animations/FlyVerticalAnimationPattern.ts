@@ -7,10 +7,10 @@ export function flyVerticalAnimation(params: FlyAnimationParams = {}): Animation
 
 export class FlyVerticalAnimationPattern extends AbstractFlyAnimationPattern {
   constructor(
-    public flyValue: number = 100,
+    public flyValue: string = '100%',
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
-    public voidFlyValue: number = -100
+    public voidFlyValue: string = '-100%'
   ) {
     super('flyVertical', true, flyValue, duration, includeVoidTransitions, voidFlyValue);
   }

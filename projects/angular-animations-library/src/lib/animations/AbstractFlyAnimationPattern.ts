@@ -5,27 +5,27 @@ import Animation from '../entities/QAnimation';
 import Transition from '../entities/QTransition';
 
 export interface FlyAnimationParams {
-  flyValue?: number;
+  flyValue?: string;
   duration?: number;
   includeVoidTransitions?: boolean;
-  voidFlyValue?: number;
+  voidFlyValue?: string;
 }
 
 abstract class AbstractFlyAnimationPattern extends AnimationPattern {
   constructor(
     public triggerName: string,
     public isVertical: boolean = false,
-    public flyValue: number = 100,
+    public flyValue: string = '100%',
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
-    public voidFlyValue: number = -100
+    public voidFlyValue: string = '-100%'
   ) {
     super(
       triggerName,
       [
-        new State('void', new Style({ transform: `${AbstractFlyAnimationPattern.getTransformValue(isVertical)}(${voidFlyValue}%)` })),
+        new State('void', new Style({ transform: `${AbstractFlyAnimationPattern.getTransformValue(isVertical)}(${voidFlyValue})` })),
         new State('inactive', new Style()),
-        new State('active', new Style({ transform: `${AbstractFlyAnimationPattern.getTransformValue(isVertical)}(${flyValue}%)` }))
+        new State('active', new Style({ transform: `${AbstractFlyAnimationPattern.getTransformValue(isVertical)}(${flyValue})` }))
       ],
       [
         new Transition('inactive => active', new Animation(duration, 'ease-in')),

@@ -4,4 +4,8 @@ export class Hero {
   toggleState() {
     this.state = this.state === 'active' ? 'inactive' : 'active';
   }
+
+  toggleVoidState() {
+    this.state = this.state === 'void' ? 'inactive' : 'void';
+  }
 }

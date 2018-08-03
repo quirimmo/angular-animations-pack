@@ -7,7 +7,7 @@ import { ScaleAnimationPattern, scaleAnimation } from './ScaleAnimationPattern';
 
 const instance: ScaleAnimationPattern = new ScaleAnimationPattern();
 
-fdescribe('ScaleAnimationPattern', () => {
+describe('ScaleAnimationPattern', () => {
   it('should be a class', () => {
     expect(ScaleAnimationPattern).toEqual(jasmine.any(Function));
   });
@@ -32,7 +32,7 @@ fdescribe('ScaleAnimationPattern', () => {
   });
 });
 
-fdescribe('scaleAnimation', () => {
+describe('scaleAnimation', () => {
   it('should return the trigger', () => {
     expect(scaleAnimation()).toEqual(new ScaleAnimationPattern().getTrigger());
   });

@@ -12,10 +12,10 @@ export function flyHorizontalAnimation(params: FlyAnimationParams = {}): Animati
 
 export class FlyHorizontalAnimationPattern extends AbstractFlyAnimationPattern {
   constructor(
-    public flyValue: number = 100,
+    public flyValue: string = '100%',
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
-    public voidFlyValue: number = -100
+    public voidFlyValue: string = '-100%'
   ) {
     super('flyHorizontal', false, flyValue, duration, includeVoidTransitions, voidFlyValue);
   }

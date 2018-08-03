@@ -15,13 +15,19 @@ export interface BounceAnimationParams {
   animationStyleProperties?: Array<BounceAnimationStyleProperties>;
 }
 
+const defaultBounceAnimationStyleParams: Array<AnimationStyleProperties> = [
+  { opacity: 0, translation: '-100%', offset: 0 },
+  { opacity: 1, translation: '-15px', offset: 0.3 },
+  { opacity: 1, translation: '0', offset: 1.0 }
+];
+
 abstract class AbstractBounceAnimationPattern extends KeyframeAnimationPattern {
   constructor(
     public triggerName: string,
     public isVertical: boolean = false,
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
-    public animationStyleProperties: Array<AnimationStyleProperties> = []
+    public animationStyleProperties: Array<AnimationStyleProperties> = defaultBounceAnimationStyleParams
   ) {
     super(
       triggerName,

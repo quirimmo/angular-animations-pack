@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { AngularAnimationsLibraryComponent } from './angular-animations-library.component';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  imports: [
-  ],
-  declarations: [AngularAnimationsLibraryComponent],
-  exports: [AngularAnimationsLibraryComponent]
+  imports: [CommonModule, BrowserModule, BrowserAnimationsModule],
+  declarations: [],
+  exports: []
 })
-export class AngularAnimationsLibraryModule { }
+export class AngularAnimationsLibraryModule {}

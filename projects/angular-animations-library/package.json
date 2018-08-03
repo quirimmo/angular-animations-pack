@@ -1,8 +1,30 @@
 {
   "name": "angular-animations-library",
-  "version": "0.0.1",
+  "version": "0.1.2",
+  "description": "An angular library of animations, reusable and customisable",
+  "author": "Quirino Lo Russo <quirimmo@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "animations",
+    "animate",
+    "angular animations",
+    "angular animate",
+    "ng-animations",
+    "ng-animate",
+    "angular-animate",
+    "angular-animations",
+    "angular animations library",
+    "angular animations framework",
+    "angular-animations-library"
+  ],
+  "bugs": {
+    "url": "https://github.com/quirimmo/angular-animations-pack/issues"
+  },
+  "homepage": "https://github.com/quirimmo/angular-animations-pack#readme",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/animations": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
   }
 }
