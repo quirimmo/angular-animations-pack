@@ -1,7 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 import { Hero } from './hero.service';
-import { fadeInAnimationFn, fadeOutAnimationFn } from 'projects/angular-animations-library/src/public_api';
+import {
+  fadeInAnimationFn,
+  fadeOutAnimationFn,
+  fadeInLeftAnimationFn,
+  fadeInRightAnimationFn
+} from 'projects/angular-animations-library/src/public_api';
 // import { highlightAnimationFn } from 'angular-animations-library';
 
 // import { highlightAnimation } from 'angular-animations-library';
@@ -35,8 +40,10 @@ import { fadeInAnimationFn, fadeOutAnimationFn } from 'projects/angular-animatio
   templateUrl: './hero-list-basic.component.html',
   styleUrls: ['./hero-list-basic.component.css'],
   animations: [
-    fadeInAnimationFn(),
-    fadeOutAnimationFn()
+    fadeInRightAnimationFn()
+    // fadeInLeftAnimationFn(),
+    // fadeInAnimationFn(),
+    // fadeOutAnimationFn()
     // fadeInAnimationFn()
     // highlightAnimationFn({}),
     //
