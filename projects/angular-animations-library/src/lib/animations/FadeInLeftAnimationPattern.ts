@@ -19,7 +19,7 @@ export class FadeInLeftAnimationPattern extends AnimationPattern {
       'fadeInLeft',
       [
         new State('*', new Style({ opacity: 1, transform: 'translateX(0%)' })),
-        new State('void', new Style({ opacity: 0, transform: 'translateX(-50%)' }))
+        new State('void', new Style({ opacity: 0, transform: 'translateX(-100%)' }))
       ],
       [new Transition(':enter', new Animation(duration, 'ease-in'))],
       false

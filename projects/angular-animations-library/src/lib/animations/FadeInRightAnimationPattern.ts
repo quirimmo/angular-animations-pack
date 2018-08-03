@@ -9,7 +9,7 @@ export interface FadeInRightAnimationParams {
   duration?: number;
 }
 
-export function fadeInRighttAnimation(params: FadeInRightAnimationParams = {}): AnimationTriggerMetadata {
+export function fadeInRightAnimation(params: FadeInRightAnimationParams = {}): AnimationTriggerMetadata {
   return new FadeInRightAnimationPattern(params.duration).getTrigger();
 }
 
@@ -19,7 +19,7 @@ export class FadeInRightAnimationPattern extends AnimationPattern {
       'fadeInRight',
       [
         new State('*', new Style({ opacity: 1, transform: 'translateX(0%)' })),
-        new State('void', new Style({ opacity: 0, transform: 'translateX(50%)' }))
+        new State('void', new Style({ opacity: 0, transform: 'translateX(100%)' }))
       ],
       [new Transition(':enter', new Animation(duration, 'ease-in'))],
       false
