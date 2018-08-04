@@ -10,7 +10,10 @@ import {
   fadeOutLeftAnimationFn,
   fadeOutRightAnimationFn,
   fadeOutUpAnimationFn,
-  fadeOutDownAnimationFn
+  fadeOutDownAnimationFn,
+  bounceInUpAnimationFn,
+  bounceOutUpAnimationFn,
+  bounceInLeftAnimationFn
 } from 'projects/angular-animations-library/src/public_api';
 // import { highlightAnimationFn } from 'angular-animations-library';
 
@@ -45,7 +48,10 @@ import {
   templateUrl: './hero-list-basic.component.html',
   styleUrls: ['./hero-list-basic.component.css'],
   animations: [
-    fadeOutDownAnimationFn(),
+    bounceInLeftAnimationFn()
+    // bounceOutUpAnimationFn()
+    // bounceInUpAnimationFn()
+    // fadeOutDownAnimationFn(),
     // fadeOutUpAnimationFn(),
     // fadeOutRightAnimationFn(),
     // fadeOutLeftAnimationFn(),

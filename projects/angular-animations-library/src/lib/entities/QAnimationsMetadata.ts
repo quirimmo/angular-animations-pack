@@ -1,0 +1,1 @@
+export const BUILT_IN_ANIMATIONS_TIMING = 300;
