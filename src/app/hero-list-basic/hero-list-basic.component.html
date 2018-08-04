@@ -2,7 +2,7 @@
   <!-- <li class="hero-list-item" *ngFor="let hero of heroes" [@highlight]="hero.state" [@scale]="hero.state" (click)="hero.toggleState()"> -->
   <!-- <li class="hero-list-item" *ngFor="let hero of heroes" [@flyVertical]="hero.state" [@flyHorizontal]="hero.state" (click)="hero.toggleState()"> -->
   <ng-container *ngIf="displayElement()">
-    <li class="hero-list-item" *ngFor="let hero of heroes" [@fadeInDown]="hero.state" (click)="hero.toggleState()">
+    <li class="hero-list-item" *ngFor="let hero of heroes" [@fadeOutDown]="hero.state" (click)="hero.toggleState()">
       {{hero.name}}
     </li>
   </ng-container>
@@ -15,6 +15,6 @@
   </p>
 </div>
 <!-- <div class="red-block" [@appear]="redBlock" (mouseover)="redBlock = 'active';" (mouseout)="redBlock = 'inactive';"> -->
-<div class="red-block" [@fadeInDown]="redBlock" (mouseover)="redBlock = 'active';" (mouseout)="redBlock = 'inactive';">
+<div class="red-block" [@fadeOutDown]="redBlock" (mouseover)="redBlock = 'active';" (mouseout)="redBlock = 'inactive';">
   RED BLOCK
 </div>
