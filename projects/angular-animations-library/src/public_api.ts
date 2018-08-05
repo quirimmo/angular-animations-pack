@@ -11,13 +11,16 @@ import { fadeAnimation, fadeInAnimation, fadeOutAnimation } from './lib/animatio
 import {
   fadeHorizontalTranslationAnimation,
   fadeInLeftAnimation,
-  fadeInRightAnimation
+  fadeInRightAnimation,
+  fadeOutLeftAnimation,
+  fadeOutRightAnimation
 } from './lib/animations/fading/FadeHorizontalTranslationAnimationPattern';
-import { fadeInDownAnimation } from './lib/animations/fading/FadeInDownAnimationPattern';
-import { fadeOutLeftAnimation } from './lib/animations/fading/FadeOutLeftAnimationPattern';
-import { fadeOutRightAnimation } from './lib/animations/fading/FadeOutRightAnimationPattern';
-import { fadeOutUpAnimation } from './lib/animations/fading/FadeOutUpAnimationPattern';
-import { fadeOutDownAnimation } from './lib/animations/fading/FadeOutDownAnimationPattern';
+import {
+  fadeInUpAnimation,
+  fadeInDownAnimation,
+  fadeOutUpAnimation,
+  fadeOutDownAnimation
+} from './lib/animations/fading/FadeVerticalTranslationAnimationPattern';
 
 import { bounceVerticalAnimation } from './lib/animations/bouncing/BounceVerticalAnimationPattern';
 import { bounceHorizontalAnimation } from './lib/animations/bouncing/BounceHorizontalAnimationPattern';
@@ -62,6 +65,7 @@ export const fadeOutAnimationFn = fadeOutAnimation;
 export const fadeHorizontalTranslationAnimationFn = fadeHorizontalTranslationAnimation;
 export const fadeInLeftAnimationFn = fadeInLeftAnimation;
 export const fadeInRightAnimationFn = fadeInRightAnimation;
+export const fadeInUpAnimationFn = fadeInUpAnimation;
 export const fadeInDownAnimationFn = fadeInDownAnimation;
 export const fadeOutLeftAnimationFn = fadeOutLeftAnimation;
 export const fadeOutRightAnimationFn = fadeOutRightAnimation;

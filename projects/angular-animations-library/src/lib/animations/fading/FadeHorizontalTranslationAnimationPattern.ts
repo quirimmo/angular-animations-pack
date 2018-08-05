@@ -19,7 +19,7 @@ export interface FadeHorizontalTranslationAnimationParams {
 
 export function fadeHorizontalTranslationAnimation(params: FadeHorizontalTranslationAnimationParams = {}): AnimationTriggerMetadata {
   return new FadeHorizontalTranslationAnimationPattern(
-    'fadeTranslation',
+    'fadeHorizontalTranslation',
     params.fadeValue,
     params.translationValue,
     params.duration,
@@ -34,8 +34,16 @@ export function fadeInLeftAnimation(): AnimationTriggerMetadata {
   return fadeInHorizontalAnimation('fadeInLeft', '-100%');
 }
 
+export function fadeOutLeftAnimation(): AnimationTriggerMetadata {
+  return fadeOutHorizontalAnimation('fadeOutLeft', '-100%');
+}
+
 export function fadeInRightAnimation(): AnimationTriggerMetadata {
   return fadeInHorizontalAnimation('fadeInRight', '100%');
+}
+
+export function fadeOutRightAnimation(): AnimationTriggerMetadata {
+  return fadeOutHorizontalAnimation('fadeOutRight', '100%');
 }
 
 function fadeInHorizontalAnimation(trigger: string, horizontalTranslation: string): AnimationTriggerMetadata {
@@ -46,6 +54,19 @@ function fadeInHorizontalAnimation(trigger: string, horizontalTranslation: strin
     BUILT_IN_ANIMATIONS_TIMING,
     true,
     false,
+    0,
+    horizontalTranslation
+  ).getTrigger();
+}
+
+function fadeOutHorizontalAnimation(trigger: string, horizontalTranslation: string): AnimationTriggerMetadata {
+  return new FadeHorizontalTranslationAnimationPattern(
+    trigger,
+    1,
+    '0%',
+    BUILT_IN_ANIMATIONS_TIMING,
+    false,
+    true,
     0,
     horizontalTranslation
   ).getTrigger();

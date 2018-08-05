@@ -14,7 +14,8 @@ import {
   bounceInUpAnimationFn,
   bounceOutUpAnimationFn,
   bounceInLeftAnimationFn,
-  bounceInRightAnimationFn
+  bounceInRightAnimationFn,
+  fadeInUpAnimationFn
 } from 'projects/angular-animations-library/src/public_api';
 // import { highlightAnimationFn } from 'angular-animations-library';
 
@@ -53,13 +54,14 @@ import {
     // bounceInLeftAnimationFn()
     // bounceOutUpAnimationFn()
     // bounceInUpAnimationFn()
-    // fadeOutDownAnimationFn(),
-    // fadeOutUpAnimationFn(),
+    fadeOutDownAnimationFn(),
+    fadeOutUpAnimationFn(),
     // fadeOutRightAnimationFn(),
     // fadeOutLeftAnimationFn(),
-    // fadeInDownAnimationFn()
+    fadeInUpAnimationFn(),
+    fadeInDownAnimationFn()
     // fadeInRightAnimationFn()
-    fadeInLeftAnimationFn(),
+    // fadeInLeftAnimationFn(),
     // fadeInAnimationFn(),
     // fadeOutAnimationFn()
     // fadeInAnimationFn()
