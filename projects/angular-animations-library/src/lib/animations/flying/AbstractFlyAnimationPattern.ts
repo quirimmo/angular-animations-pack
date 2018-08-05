@@ -1,8 +1,8 @@
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
-import AnimationPattern from '../entities/QAnimationPattern';
-import Animation from '../entities/QAnimation';
-import Transition from '../entities/QTransition';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
+import AnimationPattern from '../../entities/QAnimationPattern';
+import Animation from '../../entities/QAnimation';
+import Transition from '../../entities/QTransition';
 
 export interface FlyAnimationParams {
   flyValue?: string;

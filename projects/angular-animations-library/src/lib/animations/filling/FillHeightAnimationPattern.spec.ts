@@ -1,7 +1,7 @@
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
-import Transition from '../entities/QTransition';
-import Animation from '../entities/QAnimation';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
+import Transition from '../../entities/QTransition';
+import Animation from '../../entities/QAnimation';
 import { FillHeightAnimationPattern, fillHeightAnimation } from './FillHeightAnimationPattern';
 import { FillSizeAnimationPattern } from './AbstractFillSizeAnimationPattern';
 

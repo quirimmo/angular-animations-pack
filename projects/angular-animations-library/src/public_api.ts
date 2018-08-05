@@ -1,11 +1,11 @@
-import { highlightAnimation } from './lib/animations/HighlightAnimationPattern';
-import { scaleAnimation } from './lib/animations/ScaleAnimationPattern';
-import { flyHorizontalAnimation } from './lib/animations/FlyHorizontalAnimationPattern';
-import { flyVerticalAnimation } from './lib/animations/FlyVerticalAnimationPattern';
-import { rotateAnimation } from './lib/animations/RotateAnimationPattern';
-import { fillWidthAnimation } from './lib/animations/FillWidthAnimationPattern';
-import { fillHeightAnimation } from './lib/animations/FillHeightAnimationPattern';
-import { appearAnimation } from './lib/animations/AppearAnimationPattern';
+import { highlightAnimation } from './lib/animations/highlighting/HighlightAnimationPattern';
+import { scaleAnimation } from './lib/animations/scaling/ScaleAnimationPattern';
+import { flyHorizontalAnimation } from './lib/animations/flying/FlyHorizontalAnimationPattern';
+import { flyVerticalAnimation } from './lib/animations/flying/FlyVerticalAnimationPattern';
+import { rotateAnimation } from './lib/animations/rotating/RotateAnimationPattern';
+import { fillWidthAnimation } from './lib/animations/filling/FillWidthAnimationPattern';
+import { fillHeightAnimation } from './lib/animations/filling/FillHeightAnimationPattern';
+import { appearAnimation } from './lib/animations/appearing/AppearAnimationPattern';
 
 import { fadeAnimation, fadeInAnimation, fadeOutAnimation } from './lib/animations/fading/FadeAnimationPattern';
 import {
@@ -19,12 +19,12 @@ import { fadeOutRightAnimation } from './lib/animations/fading/FadeOutRightAnima
 import { fadeOutUpAnimation } from './lib/animations/fading/FadeOutUpAnimationPattern';
 import { fadeOutDownAnimation } from './lib/animations/fading/FadeOutDownAnimationPattern';
 
-import { bounceVerticalAnimation } from './lib/animations/BounceVerticalAnimationPattern';
-import { bounceHorizontalAnimation } from './lib/animations/BounceHorizontalAnimationPattern';
-import { bounceInUpAnimation } from './lib/animations/BounceInUpAnimationPattern';
-import { bounceOutUpAnimation } from './lib/animations/BounceOutUpAnimationPattern';
-import { bounceInLeftAnimation } from './lib/animations/BounceInLeftAnimationPattern';
-import { bounceInRightAnimation } from './lib/animations/BounceInRightAnimationPattern';
+import { bounceVerticalAnimation } from './lib/animations/bouncing/BounceVerticalAnimationPattern';
+import { bounceHorizontalAnimation } from './lib/animations/bouncing/BounceHorizontalAnimationPattern';
+import { bounceInUpAnimation } from './lib/animations/bouncing/BounceInUpAnimationPattern';
+import { bounceOutUpAnimation } from './lib/animations/bouncing/BounceOutUpAnimationPattern';
+import { bounceInLeftAnimation } from './lib/animations/bouncing/BounceInLeftAnimationPattern';
+import { bounceInRightAnimation } from './lib/animations/bouncing/BounceInRightAnimationPattern';
 
 /*
  * Public API Surface of angular-animations-library

@@ -1,9 +1,9 @@
 import { AppearAnimationPattern, appearAnimation } from './AppearAnimationPattern';
-import AnimationPattern from '../entities/QAnimationPattern';
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
-import Transition from '../entities/QTransition';
-import Animation from '../entities/QAnimation';
+import AnimationPattern from '../../entities/QAnimationPattern';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
+import Transition from '../../entities/QTransition';
+import Animation from '../../entities/QAnimation';
 
 const instance: AppearAnimationPattern = new AppearAnimationPattern();
 

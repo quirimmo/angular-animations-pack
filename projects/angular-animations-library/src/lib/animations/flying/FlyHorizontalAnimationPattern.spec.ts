@@ -1,7 +1,7 @@
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
-import Transition from '../entities/QTransition';
-import Animation from '../entities/QAnimation';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
+import Transition from '../../entities/QTransition';
+import Animation from '../../entities/QAnimation';
 import { FlyHorizontalAnimationPattern, flyHorizontalAnimation } from './FlyHorizontalAnimationPattern';
 import AbstractFlyAnimationPattern from './AbstractFlyAnimationPattern';
 

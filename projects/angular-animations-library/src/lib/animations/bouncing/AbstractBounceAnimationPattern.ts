@@ -1,7 +1,7 @@
-import AnimationStyleProperties from '../entities/QAnimationStyleProperties';
-import KeyframeAnimationPattern from '../entities/QKeyframeAnimationPattern';
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
+import AnimationStyleProperties from '../../entities/QAnimationStyleProperties';
+import KeyframeAnimationPattern from '../../entities/QKeyframeAnimationPattern';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
 
 export interface BounceAnimationStyleProperties {
   opacity: number;

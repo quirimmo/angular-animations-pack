@@ -1,12 +1,12 @@
-import AnimationStyleProperties from '../entities/QAnimationStyleProperties';
-import KeyframeAnimationPattern from '../entities/QKeyframeAnimationPattern';
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
+import AnimationStyleProperties from '../../entities/QAnimationStyleProperties';
+import KeyframeAnimationPattern from '../../entities/QKeyframeAnimationPattern';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
 import { AnimationTriggerMetadata } from '@angular/animations';
-import Keyframe from '../entities/QKeyframe';
-import Transition from '../entities/QTransition';
-import KeyframeAnimation from '../entities/QKeyframeAnimation';
-import { BUILT_IN_ANIMATIONS_TIMING } from '../entities/QAnimationsMetadata';
+import Keyframe from '../../entities/QKeyframe';
+import Transition from '../../entities/QTransition';
+import KeyframeAnimation from '../../entities/QKeyframeAnimation';
+import { BUILT_IN_ANIMATIONS_TIMING } from '../../entities/QAnimationsMetadata';
 
 export interface BounceInUpAnimationParams {
   duration?: number;

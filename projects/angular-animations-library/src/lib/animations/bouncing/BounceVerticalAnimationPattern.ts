@@ -1,21 +1,21 @@
 import { AnimationTriggerMetadata } from '@angular/animations';
-import AnimationStyleProperties from '../entities/QAnimationStyleProperties';
+import AnimationStyleProperties from '../../entities/QAnimationStyleProperties';
 import AbstractBounceAnimationPattern, { BounceAnimationParams } from './AbstractBounceAnimationPattern';
 
-export function bounceHorizontalAnimation(params: BounceAnimationParams = {}): AnimationTriggerMetadata {
+export function bounceVerticalAnimation(params: BounceAnimationParams = {}): AnimationTriggerMetadata {
   const bounceStyleProperties: Array<AnimationStyleProperties> = AbstractBounceAnimationPattern.convertStylePropertiesToBounceProperties(
     params,
-    false
+    true
   );
-  return new BounceHorizontalAnimationPattern(params.duration, params.includeVoidTransitions, bounceStyleProperties).getTrigger();
+  return new BounceVerticalAnimationPattern(params.duration, params.includeVoidTransitions, bounceStyleProperties).getTrigger();
 }
 
-export class BounceHorizontalAnimationPattern extends AbstractBounceAnimationPattern {
+export class BounceVerticalAnimationPattern extends AbstractBounceAnimationPattern {
   constructor(
     public duration: number = 100,
     public includeVoidTransitions: boolean = false,
     public animationStyleProperties: Array<AnimationStyleProperties> = []
   ) {
-    super('bounceHorizontal', false, duration, includeVoidTransitions, animationStyleProperties);
+    super('bounceVertical', true, duration, includeVoidTransitions, animationStyleProperties);
   }
 }

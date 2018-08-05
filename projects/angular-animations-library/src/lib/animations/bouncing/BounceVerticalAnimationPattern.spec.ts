@@ -1,9 +1,9 @@
 import AbstractBounceAnimationPattern from './AbstractBounceAnimationPattern';
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
-import Transition from '../entities/QTransition';
-import KeyframeAnimation from '../entities/QKeyframeAnimation';
-import Keyframe from '../entities/QKeyframe';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
+import Transition from '../../entities/QTransition';
+import KeyframeAnimation from '../../entities/QKeyframeAnimation';
+import Keyframe from '../../entities/QKeyframe';
 import { BounceVerticalAnimationPattern, bounceVerticalAnimation } from './BounceVerticalAnimationPattern';
 
 const instance: BounceVerticalAnimationPattern = new BounceVerticalAnimationPattern();
