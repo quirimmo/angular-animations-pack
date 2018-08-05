@@ -21,6 +21,9 @@ import {
   bounceOutUpAnimation,
   bounceOutDownAnimation
 } from 'projects/angular-animations-library/src/public_api';
+import { trigger } from '../../../node_modules/@angular/animations';
+
+bounceInRightAnimation();
 
 @Component({
   selector: 'app-hero-list-basic',
@@ -38,13 +41,13 @@ import {
     fadeInAnimation(),
     fadeOutAnimation(),
     bounceInRightAnimation(),
-    bounceInLeftAnimation(),
-    bounceOutLeftAnimation(),
-    bounceOutRightAnimation(),
-    bounceInUpAnimation(),
-    bounceInDownAnimation(),
-    bounceOutUpAnimation(),
-    bounceOutDownAnimation(),
+    // bounceInLeftAnimation(),
+    // bounceOutLeftAnimation(),
+    // bounceOutRightAnimation(),
+    // bounceInUpAnimation(),
+    // bounceInDownAnimation(),
+    // bounceOutUpAnimation(),
+    // bounceOutDownAnimation(),
 
     // bounceInRightAnimation(),
     // bounceInLeftAnimation(),

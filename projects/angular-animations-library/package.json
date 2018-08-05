@@ -22,7 +22,7 @@
     "url": "https://github.com/quirimmo/angular-animations-pack/issues"
   },
   "homepage": "https://github.com/quirimmo/angular-animations-pack#readme",
-  "peerDependencies": {
+  "devDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/animations": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
