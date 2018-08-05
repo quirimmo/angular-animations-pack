@@ -11,39 +11,16 @@ import {
   fadeOutRightAnimation,
   fadeOutUpAnimation,
   fadeOutDownAnimation,
-  bounceInUpAnimation,
-  bounceOutUpAnimation,
   bounceInLeftAnimation,
   bounceInRightAnimation,
-  fadeInUpAnimation
+  fadeInUpAnimation,
+  bounceOutLeftAnimation,
+  bounceOutRightAnimation,
+  bounceInUpAnimation,
+  bounceInDownAnimation,
+  bounceOutUpAnimation,
+  bounceOutDownAnimation
 } from 'projects/angular-animations-library/src/public_api';
-// import { highlightAnimation } from 'angular-animations-library';
-
-// import { highlightAnimation } from 'angular-animations-library';
-// import { highlightAnimation } from 'angular-animations-library';
-// import { appearAnimation } from 'projects/angular-animations-library/src/public_api';
-// import { appearAnimation } from 'angular-animations-library';
-
-// import { appearAnimationFunzione } from 'angular-animations-library';
-// import { appearAnimationFunzione } from 'projects/angular-animations-library/src/public_api';
-// import { appearAnimationFunzione } from 'dist/angular-animations-library/public_api';
-// import { appearAnimation } from 'projects/angular-animations-library/src/public_api';
-// import { appearAnimation } from 'dist/angular-animations-library';
-// import { appearAnimation } from 'dist/angular-animations-library/';
-
-// import {
-//   highlightAnimationFn,
-//   scaleAnimationFn,
-//   flyHorizontalAnimationFn,
-//   flyVerticalAnimationFn,
-//   fillWidthAnimationFn,
-//   fillHeightAnimationFn,
-//   rotateAnimationFn,
-//   fadeAnimationFn,
-//   bounceVerticalAnimationFn,
-//   bounceHorizontalAnimationFn,
-//   appearAnimationFn
-// } from '../angular-animations-pack/angular-animations-pack.module';
 
 @Component({
   selector: 'app-hero-list-basic',
@@ -59,10 +36,19 @@ import {
     fadeInRightAnimation(),
     fadeInLeftAnimation(),
     fadeInAnimation(),
-    fadeOutAnimation()
+    fadeOutAnimation(),
+    bounceInRightAnimation(),
+    bounceInLeftAnimation(),
+    bounceOutLeftAnimation(),
+    bounceOutRightAnimation(),
+    bounceInUpAnimation(),
+    bounceInDownAnimation(),
+    bounceOutUpAnimation(),
+    bounceOutDownAnimation(),
 
-    // bounceInRightAnimation()
-    // bounceInLeftAnimation()
+    // bounceInRightAnimation(),
+    // bounceInLeftAnimation(),
+
     // bounceOutUpAnimation()
     // bounceInUpAnimation()
     // highlightAnimation({}),

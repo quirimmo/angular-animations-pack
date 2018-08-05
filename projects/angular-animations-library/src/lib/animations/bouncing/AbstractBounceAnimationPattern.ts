@@ -2,6 +2,8 @@ import AnimationStyleProperties from '../../entities/QAnimationStyleProperties';
 import KeyframeAnimationPattern from '../../entities/QKeyframeAnimationPattern';
 import State from '../../entities/QState';
 import Style from '../../entities/QStyle';
+import { CommonAnimationParameters } from '../../entities/QAnimationsMetadata';
+import { AnimationTriggerMetadata } from '../../../../../../node_modules/@angular/animations';
 
 export interface BounceAnimationStyleProperties {
   opacity: number;
@@ -9,56 +11,62 @@ export interface BounceAnimationStyleProperties {
   offset: number;
 }
 
-export interface BounceAnimationParams {
-  duration?: number;
-  includeVoidTransitions?: boolean;
+export interface BounceAnimationParams extends CommonAnimationParameters {
   animationStyleProperties?: Array<BounceAnimationStyleProperties>;
 }
 
-const defaultBounceAnimationStyleParams: Array<AnimationStyleProperties> = [
-  { opacity: 0, translation: '-100%', offset: 0 },
-  { opacity: 1, translation: '-15px', offset: 0.3 },
-  { opacity: 1, translation: '0', offset: 1.0 }
-];
+const defaultBounceAnimationParams: BounceAnimationParams = {
+  animationStyleProperties: [
+    { opacity: 0, translation: '-100%', offset: 0 },
+    { opacity: 1, translation: '-15px', offset: 0.3 },
+    { opacity: 1, translation: '0', offset: 1.0 }
+  ]
+};
 
 abstract class AbstractBounceAnimationPattern extends KeyframeAnimationPattern {
   constructor(
     public triggerName: string,
     public isVertical: boolean = false,
     public duration: number = 100,
-    public includeVoidTransitions: boolean = false,
-    public animationStyleProperties: Array<AnimationStyleProperties> = defaultBounceAnimationStyleParams
+    public includeEnterTransition: boolean = false,
+    public includeLeaveTransition: boolean = false,
+    public bounceAnimationParams: Array<BounceAnimationStyleProperties> = []
   ) {
-    super(
-      triggerName,
-      [new State('inactive', new Style({ transform: `${AbstractBounceAnimationPattern.getTranslation(isVertical)}(0)` }))],
-      animationStyleProperties,
-      duration,
-      includeVoidTransitions
-    );
+    super(triggerName, [], [], duration, includeEnterTransition, includeLeaveTransition);
   }
 
-  static getTranslation(isVertical: boolean): string {
-    return isVertical ? 'translateY' : 'translateX';
+  getTrigger(): AnimationTriggerMetadata {
+    this.animationStyleProperties = this.convertStylePropertiesToBounceProperties(this.bounceAnimationParams);
+    this.initBounceAnimationPattern();
+    return super.getTrigger();
   }
 
-  static convertStylePropertiesToBounceProperties(params: BounceAnimationParams, isVertical: boolean): Array<AnimationStyleProperties> {
+  initBounceAnimationPattern(): void {
+    this.setupStateList([new State('inactive', new Style({ transform: `${this.getTranslation()}(0)` }))]);
+  }
+
+  getTranslation(): string {
+    return this.isVertical ? 'translateY' : 'translateX';
+  }
+
+  convertStylePropertiesToBounceProperties(styleProperties: Array<BounceAnimationStyleProperties> = []): Array<AnimationStyleProperties> {
     const bounceStyleProperties: Array<AnimationStyleProperties> = [];
-    params.animationStyleProperties = params.animationStyleProperties || [];
-    params.animationStyleProperties.forEach(el => {
+    styleProperties.forEach(onEachStyleProperties.bind(this));
+    return bounceStyleProperties;
+
+    function onEachStyleProperties(el: BounceAnimationStyleProperties): void {
       const obj = {};
       for (const k in el) {
         if (el.hasOwnProperty(k)) {
           if (k === 'translation') {
-            obj['transform'] = `${AbstractBounceAnimationPattern.getTranslation(isVertical)}(${el[k]})`;
+            obj['transform'] = `${this.getTranslation()}(${el[k]})`;
           } else {
             obj[k] = el[k];
           }
         }
       }
       bounceStyleProperties.push(obj);
-    });
-    return bounceStyleProperties;
+    }
   }
 }
 

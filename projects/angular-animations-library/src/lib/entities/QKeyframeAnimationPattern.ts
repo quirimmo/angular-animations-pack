@@ -5,6 +5,7 @@ import AnimationStyleProperties from './QAnimationStyleProperties';
 import Style from './QStyle';
 import Keyframe from './QKeyframe';
 import KeyframeAnimation from './QKeyframeAnimation';
+import { AnimationTriggerMetadata } from '@angular/animations';
 
 class KeyframeAnimationPattern extends AbstractAnimationPattern {
   constructor(
@@ -12,16 +13,24 @@ class KeyframeAnimationPattern extends AbstractAnimationPattern {
     public stateList: Array<State>,
     public animationStyleProperties: Array<AnimationStyleProperties> = [],
     public duration: number,
-    public includeVoidTransitions: boolean = false
+    public includeEnterTransition: boolean = false,
+    public includeLeaveTransition: boolean = false
   ) {
-    super(triggerName, includeVoidTransitions);
+    super(triggerName, includeEnterTransition, includeLeaveTransition);
+  }
 
+  initKeyframeAnimationPattern(): void {
     const keyframeStyles: Array<Style> = this.animationStyleProperties.map(el => new Style(el));
     const keyframe: Keyframe = new Keyframe(keyframeStyles);
     const transition: Transition = new Transition('inactive <=> active', new KeyframeAnimation(this.duration, keyframe));
-
-    this.setupStateList(this.stateList).setupTransitionList([transition]);
+    this.transitionList.push(transition);
   }
+
+  getTrigger(): AnimationTriggerMetadata {
+    this.initKeyframeAnimationPattern();
+    return super.getTrigger();
+  }
+
 }
 
 export default KeyframeAnimationPattern;
