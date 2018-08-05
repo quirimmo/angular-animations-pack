@@ -3,20 +3,15 @@ import State from '../../entities/QState';
 import Style from '../../entities/QStyle';
 import Transition from '../../entities/QTransition';
 import Animation from '../../entities/QAnimation';
-import { AnimationTriggerMetadata } from '@angular/animations';
-import AbstractAnimationPattern from '../../entities/QAbstractAnimationPattern';
+import { IAnimationPatternActions } from '../../entities/QAnimationPatternActions';
+import { FadeAnimationParams } from './FadeAnimationPattern';
 
-export interface FadeHorizontalTranslationAnimationParams {
-  fadeValue?: number;
+export interface FadeTranslationAnimationParams extends FadeAnimationParams {
   translationValue?: string;
-  duration?: number;
-  includeEnterTransition?: boolean;
-  includeLeaveTransition?: boolean;
-  voidFadeValue?: number;
   voidTranslationValue?: string;
 }
 
-export abstract class FadeTranslationAnimationPattern extends AnimationPattern {
+export abstract class FadeTranslationAnimationPattern extends AnimationPattern implements IAnimationPatternActions {
   constructor(
     public trigger: string = 'fade',
     public isHorizontalTranslation: boolean = true,
@@ -30,10 +25,10 @@ export abstract class FadeTranslationAnimationPattern extends AnimationPattern {
   ) {
     super(trigger, [], [], includeEnterTransition, includeLeaveTransition);
 
-    this.initFadeTranslationAnimationPattern();
+    this.defineAnimationPatternProperties();
   }
 
-  initFadeTranslationAnimationPattern(): void {
+  defineAnimationPatternProperties(): void {
     this.stateList = [
       new State(
         'void',

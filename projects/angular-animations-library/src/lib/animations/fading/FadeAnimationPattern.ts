@@ -4,13 +4,11 @@ import Style from '../../entities/QStyle';
 import Transition from '../../entities/QTransition';
 import Animation from '../../entities/QAnimation';
 import { AnimationTriggerMetadata } from '@angular/animations';
-import { BUILT_IN_ANIMATIONS_TIMING } from '../../entities/QAnimationsMetadata';
+import { BUILT_IN_ANIMATIONS_TIMING, CommonAnimationParameters } from '../../entities/QAnimationsMetadata';
+import { IAnimationPatternActions } from '../../entities/QAnimationPatternActions';
 
-export interface FadeAnimationParams {
+export interface FadeAnimationParams extends CommonAnimationParameters {
   fadeValue?: number;
-  duration?: number;
-  includeEnterTransition?: boolean;
-  includeLeaveTransition?: boolean;
   voidFadeValue?: number;
 }
 
@@ -33,7 +31,7 @@ export function fadeOutAnimation(): AnimationTriggerMetadata {
   return new FadeAnimationPattern('fadeOut', 0, BUILT_IN_ANIMATIONS_TIMING, false, true, 1).getTrigger();
 }
 
-export class FadeAnimationPattern extends AnimationPattern {
+export class FadeAnimationPattern extends AnimationPattern implements IAnimationPatternActions {
   constructor(
     public trigger: string = 'fade',
     public fadeValue: number = 0,
@@ -44,10 +42,10 @@ export class FadeAnimationPattern extends AnimationPattern {
   ) {
     super(trigger, [], [], includeEnterTransition, includeLeaveTransition);
 
-    this.initFadeAnimationPattern();
+    this.defineAnimationPatternProperties();
   }
 
-  initFadeAnimationPattern(): void {
+  defineAnimationPatternProperties(): void {
     this.stateList = [
       new State('void', new Style({ opacity: this.voidFadeValue })),
       new State('inactive', new Style()),

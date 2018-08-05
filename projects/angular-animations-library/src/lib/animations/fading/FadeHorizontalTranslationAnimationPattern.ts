@@ -1,23 +1,9 @@
-import AnimationPattern from '../../entities/QAnimationPattern';
-import State from '../../entities/QState';
-import Style from '../../entities/QStyle';
-import Transition from '../../entities/QTransition';
-import Animation from '../../entities/QAnimation';
 import { AnimationTriggerMetadata } from '@angular/animations';
-import { FadeTranslationAnimationPattern } from './AbstractFadeTranslationAnimationPattern';
+import { FadeTranslationAnimationPattern, FadeTranslationAnimationParams } from './AbstractFadeTranslationAnimationPattern';
 import { BUILT_IN_ANIMATIONS_TIMING } from '../../entities/QAnimationsMetadata';
 
-export interface FadeHorizontalTranslationAnimationParams {
-  fadeValue?: number;
-  translationValue?: string;
-  duration?: number;
-  includeEnterTransition?: boolean;
-  includeLeaveTransition?: boolean;
-  voidFadeValue?: number;
-  voidTranslationValue?: string;
-}
 
-export function fadeHorizontalTranslationAnimation(params: FadeHorizontalTranslationAnimationParams = {}): AnimationTriggerMetadata {
+export function fadeHorizontalTranslationAnimation(params: FadeTranslationAnimationParams = {}): AnimationTriggerMetadata {
   return new FadeHorizontalTranslationAnimationPattern(
     'fadeHorizontalTranslation',
     params.fadeValue,

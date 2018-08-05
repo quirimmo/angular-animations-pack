@@ -1,18 +1,8 @@
 import { AnimationTriggerMetadata } from '@angular/animations';
-import { FadeTranslationAnimationPattern } from './AbstractFadeTranslationAnimationPattern';
+import { FadeTranslationAnimationPattern, FadeTranslationAnimationParams } from './AbstractFadeTranslationAnimationPattern';
 import { BUILT_IN_ANIMATIONS_TIMING } from '../../entities/QAnimationsMetadata';
 
-export interface FadeVerticalTranslationAnimationParams {
-  fadeValue?: number;
-  translationValue?: string;
-  duration?: number;
-  includeEnterTransition?: boolean;
-  includeLeaveTransition?: boolean;
-  voidFadeValue?: number;
-  voidTranslationValue?: string;
-}
-
-export function fadeVerticalTranslationAnimation(params: FadeVerticalTranslationAnimationParams = {}): AnimationTriggerMetadata {
+export function fadeVerticalTranslationAnimation(params: FadeTranslationAnimationParams = {}): AnimationTriggerMetadata {
   return new FadeVerticalTranslationAnimationPattern(
     'fadeVerticalTranslation',
     params.fadeValue,
