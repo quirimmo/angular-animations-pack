@@ -1,10 +1,10 @@
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { HeroListBasicComponent } from './hero-list-basic/hero-list-basic.component';
-import { AngularAnimationsPackModule } from './angular-animations-pack/angular-animations-pack.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { DebugElement } from '../../node_modules/@angular/core';
+import { DebugElement } from '@angular/core';
+import { AngularAnimationsLibraryModule } from 'projects/angular-animations-library/src/public_api';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -13,7 +13,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [AppComponent, HeroListBasicComponent],
-      imports: [BrowserModule, BrowserAnimationsModule, AngularAnimationsPackModule]
+      imports: [BrowserModule, BrowserAnimationsModule, AngularAnimationsLibraryModule]
     }).compileComponents();
   }));
 

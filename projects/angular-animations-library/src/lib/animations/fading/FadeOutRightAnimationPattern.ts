@@ -1,9 +1,9 @@
 import { AnimationTriggerMetadata } from '@angular/animations';
-import AnimationPattern from '../entities/QAnimationPattern';
-import Animation from '../entities/QAnimation';
-import Style from '../entities/QStyle';
-import State from '../entities/QState';
-import Transition from '../entities/QTransition';
+import AnimationPattern from '../../entities/QAnimationPattern';
+import Animation from '../../entities/QAnimation';
+import Style from '../../entities/QStyle';
+import State from '../../entities/QState';
+import Transition from '../../entities/QTransition';
 
 export interface FadeOutRightAnimationParams {
   duration?: number;

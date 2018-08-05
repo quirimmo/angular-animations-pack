@@ -1,8 +1,8 @@
-import AnimationPattern from '../entities/QAnimationPattern';
-import State from '../entities/QState';
-import Style from '../entities/QStyle';
-import Transition from '../entities/QTransition';
-import Animation from '../entities/QAnimation';
+import AnimationPattern from '../../entities/QAnimationPattern';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
+import Transition from '../../entities/QTransition';
+import Animation from '../../entities/QAnimation';
 import { FadeOutUpAnimationPattern, fadeOutUpAnimation } from './FadeOutUpAnimationPattern';
 
 const instance: FadeOutUpAnimationPattern = new FadeOutUpAnimationPattern();

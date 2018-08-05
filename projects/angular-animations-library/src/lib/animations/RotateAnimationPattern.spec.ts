@@ -3,7 +3,7 @@ import State from '../entities/QState';
 import Style from '../entities/QStyle';
 import Transition from '../entities/QTransition';
 import Animation from '../entities/QAnimation';
-import { FadeAnimationPattern, fadeAnimation } from './FadeAnimationPattern';
+import { FadeAnimationPattern, fadeAnimation } from './fading/FadeAnimationPattern';
 import { HighlightAnimationPattern, highlightAnimation } from './HighlightAnimationPattern';
 import { RotateAnimationPattern, rotateAnimation } from './RotateAnimationPattern';
 
