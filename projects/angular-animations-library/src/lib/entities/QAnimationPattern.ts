@@ -7,12 +7,11 @@ class AnimationPattern extends AbstractAnimationPattern {
     public triggerName: string,
     public stateList: Array<State>,
     public transitionList: Array<Transition>,
-    public includeVoidTransitions: boolean = false
+    public includeEnterTransition: boolean = false,
+    public includeLeaveTransition: boolean = false
   ) {
-    super(triggerName, includeVoidTransitions);
-    this.setupStateList(stateList).setupTransitionList(transitionList);
+    super(triggerName, includeEnterTransition, includeLeaveTransition);
   }
-
 }
 
 export default AnimationPattern;

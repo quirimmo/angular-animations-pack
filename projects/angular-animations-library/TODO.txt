@@ -1,3 +1,4 @@
 refactor void concept in order to explicitely add enter and leave
 refactor all the structure in order to inherit built in animations from general ones
 refactor all the interfaces used as input for animations
+refactor all to use less code inside constructor when possible using instead class/instance methods
