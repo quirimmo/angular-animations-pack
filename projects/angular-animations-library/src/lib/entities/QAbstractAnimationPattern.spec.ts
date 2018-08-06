@@ -23,8 +23,12 @@ describe('QAbstractAnimationPattern', () => {
       expect(instance.triggerName).toBe('trigger');
     });
 
-    it('should set the includeVoidTransition', () => {
-      expect(instance.includeVoidTransitions).toBeFalsy();
+    it('should set the includeEnterTransition to false', () => {
+      expect(instance.includeEnterTransition).toBeFalsy();
+    });
+
+    it('should set the includeLeaveTransition to false', () => {
+      expect(instance.includeLeaveTransition).toBeFalsy();
     });
 
     it('should set the stateList', () => {
@@ -32,7 +36,7 @@ describe('QAbstractAnimationPattern', () => {
       expect(instance.stateList.length).toBe(0);
     });
 
-    it('should set the transitionList', () => {
+    it('should set the transitionList as empty array', () => {
       expect(instance.transitionList).toEqual(jasmine.any(Array));
       expect(instance.transitionList.length).toBe(0);
     });
@@ -43,12 +47,17 @@ describe('QAbstractAnimationPattern', () => {
       expect(instance.setupStateList).toEqual(jasmine.any(Function));
       expect(instance.setupTransitionList).toEqual(jasmine.any(Function));
       expect(instance.getTrigger).toEqual(jasmine.any(Function));
+      expect(instance.initAnimationPattern).toEqual(jasmine.any(Function));
+      expect(instance.addTransition).toEqual(jasmine.any(Function));
     });
   });
 
   describe('getTrigger', () => {
     it('should return the corresponding AnimationTriggerMetadata', () => {
-      expect(instance.getTrigger()).toEqual(new Trigger('trigger', [], []).trigger());
+      const transition = new Transition();
+      instance.transitionList = [transition];
+      expect(instance.getTrigger()).toEqual(new Trigger('trigger', [], [transition]).trigger());
+      instance.transitionList.length = 0;
     });
   });
 
@@ -73,9 +82,10 @@ describe('QAbstractAnimationPattern', () => {
       });
     });
 
-    describe('include void transitions', () => {
+    describe('include enter and leave transition', () => {
       beforeEach(() => {
-        instance.includeVoidTransitions = true;
+        instance.includeEnterTransition = true;
+        instance.includeLeaveTransition = true;
       });
 
       describe('KeyFrameAnimation', () => {
@@ -86,13 +96,19 @@ describe('QAbstractAnimationPattern', () => {
           instance.setupTransitionList([transition]);
         });
 
-        it('should add one void transition', () => {
-          expect(instance.transitionList.length).toBe(2);
+        it('should add enter and leave transition', () => {
+          expect(instance.transitionList.length).toBe(3);
         });
 
-        it('should add the right void transition', () => {
+        it('should add the enter transition', () => {
           const voidTransition = instance.transitionList[1];
-          expect(voidTransition.stateChangeExpression).toBe('void <=> *');
+          expect(voidTransition.stateChangeExpression).toBe(':enter');
+          expect(voidTransition.animation).toEqual(animation);
+        });
+
+        it('should add the leave transition', () => {
+          const voidTransition = instance.transitionList[2];
+          expect(voidTransition.stateChangeExpression).toBe(':leave');
           expect(voidTransition.animation).toEqual(animation);
         });
       });
@@ -106,19 +122,19 @@ describe('QAbstractAnimationPattern', () => {
           instance.setupTransitionList([transition]);
         });
 
-        it('should add two void transitions', () => {
+        it('should add enter and leave transitions', () => {
           expect(instance.transitionList.length).toBe(3);
         });
 
-        it('should add the right void to all transition', () => {
+        it('should add the enter transition', () => {
           const voidTransitionIn = instance.transitionList[1];
-          expect(voidTransitionIn.stateChangeExpression).toBe('void => *');
+          expect(voidTransitionIn.stateChangeExpression).toBe(':enter');
           expect(voidTransitionIn.animation).toEqual(new Animation());
         });
 
-        it('should add the right all to void transition', () => {
+        it('should add the leave transition', () => {
           const voidTransitionOut = instance.transitionList[2];
-          expect(voidTransitionOut.stateChangeExpression).toBe('* => void');
+          expect(voidTransitionOut.stateChangeExpression).toBe(':leave');
           expect(voidTransitionOut.animation).toEqual(new Animation(100, 'ease-out'));
         });
       });

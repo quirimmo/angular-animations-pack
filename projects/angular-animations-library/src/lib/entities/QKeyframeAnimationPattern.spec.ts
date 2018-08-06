@@ -5,6 +5,7 @@ import Transition from './QTransition';
 import KeyframeAnimation from './QKeyframeAnimation';
 
 const instance: KeyframeAnimationPattern = new KeyframeAnimationPattern('trigger', [], [], 100);
+instance.initKeyframeAnimationPattern();
 
 describe('KeyframeAnimation', () => {
   it('should be a class', () => {
@@ -13,6 +14,15 @@ describe('KeyframeAnimation', () => {
 
   it('should create an instance', () => {
     expect(instance instanceof KeyframeAnimationPattern).toBeTruthy();
+  });
+
+  it('should inherit from AbstractAnimationPattern', () => {
+    expect(instance instanceof AbstractAnimationPattern).toBeTruthy();
+  });
+
+  it('should expose the methods', () => {
+    expect(instance.initKeyframeAnimationPattern).toEqual(jasmine.any(Function));
+    expect(instance.getTrigger).toEqual(jasmine.any(Function));
   });
 
   it('should inherit from AbstractAnimationPattern', () => {

@@ -29,8 +29,6 @@ describe('AppearAnimationPattern', () => {
   it('should define the transitions', () => {
     expect(instance.transitionList).toContain(new Transition('inactive => active', new Animation(100, 'ease-in')));
     expect(instance.transitionList).toContain(new Transition('active => inactive', new Animation(100, 'ease-out')));
-    expect(instance.transitionList).toContain(new Transition('void => *', new Animation(100, 'ease-in')));
-    expect(instance.transitionList).toContain(new Transition('* => void', new Animation(100, 'ease-out')));
   });
 });
 

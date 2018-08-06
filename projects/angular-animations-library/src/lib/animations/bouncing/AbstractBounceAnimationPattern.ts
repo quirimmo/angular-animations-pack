@@ -15,14 +15,6 @@ export interface BounceAnimationParams extends CommonAnimationParameters {
   animationStyleProperties?: Array<BounceAnimationStyleProperties>;
 }
 
-const defaultBounceAnimationParams: BounceAnimationParams = {
-  animationStyleProperties: [
-    { opacity: 0, translation: '-100%', offset: 0 },
-    { opacity: 1, translation: '-15px', offset: 0.3 },
-    { opacity: 1, translation: '0', offset: 1.0 }
-  ]
-};
-
 abstract class AbstractBounceAnimationPattern extends KeyframeAnimationPattern {
   constructor(
     public triggerName: string,

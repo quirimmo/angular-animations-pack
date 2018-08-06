@@ -24,16 +24,17 @@ abstract class AbstractAnimationPattern {
       this.addTransition(animation, ':enter');
     }
     if (this.includeLeaveTransition) {
-      this.addTransition(animation, ':leave');
+      this.addTransition(animation, ':leave', true);
     }
     return this;
   }
 
-  addTransition(animation: AbstractAnimation, transition: string): AbstractAnimationPattern {
+  addTransition(animation: AbstractAnimation, transition: string, isLeaveTransition: boolean = false): AbstractAnimationPattern {
     if (animation instanceof KeyframeAnimation) {
       this.transitionList.push(new Transition(transition, animation));
     } else {
-      this.transitionList.push(new Transition(transition, new Animation(animation.duration, 'ease-in')));
+      const easing: string = isLeaveTransition ? 'ease-out' : 'ease-in';
+      this.transitionList.push(new Transition(transition, new Animation(animation.duration, easing)));
     }
     return this;
   }
