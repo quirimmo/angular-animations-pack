@@ -19,9 +19,16 @@ import {
   bounceInUpAnimation,
   bounceInDownAnimation,
   bounceOutUpAnimation,
-  bounceOutDownAnimation
+  bounceOutDownAnimation,
+  appearAnimation
 } from 'projects/angular-animations-library/src/public_api';
-import { bounceInDownAnimationValue } from './custom-animations';
+import {
+  bounceInDownAnimationValue,
+  appearAnimationValue,
+  fillWidthAnimationValue,
+  fillHeightAnimationValue,
+  fillOutWidthAnimationValue
+} from './custom-animations';
 
 @Component({
   selector: 'app-hero-list-basic',
@@ -38,7 +45,11 @@ import { bounceInDownAnimationValue } from './custom-animations';
     fadeInLeftAnimation(),
     fadeInAnimation(),
     fadeOutAnimation(),
-    bounceInDownAnimationValue
+    bounceInDownAnimationValue,
+    appearAnimationValue,
+    fillWidthAnimationValue,
+    fillHeightAnimationValue,
+    fillOutWidthAnimationValue
     // bounceInRightAnimation(),
     // bounceInLeftAnimation(),
     // bounceOutLeftAnimation(),

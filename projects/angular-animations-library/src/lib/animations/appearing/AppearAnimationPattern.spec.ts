@@ -5,7 +5,7 @@ import Style from '../../entities/QStyle';
 import Transition from '../../entities/QTransition';
 import Animation from '../../entities/QAnimation';
 
-const instance: AppearAnimationPattern = new AppearAnimationPattern();
+const instance: AppearAnimationPattern = new AppearAnimationPattern(300, 0, 1);
 
 describe('AppearAnimationPattern', () => {
   it('should be a class', () => {
@@ -27,8 +27,8 @@ describe('AppearAnimationPattern', () => {
   });
 
   it('should define the transitions', () => {
-    expect(instance.transitionList).toContain(new Transition('inactive => active', new Animation(100, 'ease-in')));
-    expect(instance.transitionList).toContain(new Transition('active => inactive', new Animation(100, 'ease-out')));
+    expect(instance.transitionList).toContain(new Transition('inactive => active', new Animation(300, 'ease-in')));
+    expect(instance.transitionList).toContain(new Transition('active => inactive', new Animation(300, 'ease-out')));
   });
 });
 

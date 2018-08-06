@@ -1,4 +1,12 @@
 import { FillSizeAnimationPattern } from './AbstractFillSizeAnimationPattern';
+import AnimationPattern from '../../entities/QAnimationPattern';
+import State from '../../entities/QState';
+import Style from '../../entities/QStyle';
+import Animation from '../../entities/QAnimation';
+import Transition from '../../entities/QTransition';
+
+class FillSizeAnimationPatternMock extends FillSizeAnimationPattern {}
+const instance: FillSizeAnimationPatternMock = new FillSizeAnimationPatternMock('trigger', '100px');
 
 describe('FillSizeAnimationPattern', () => {
   it('should be a class', () => {
@@ -6,18 +14,37 @@ describe('FillSizeAnimationPattern', () => {
   });
 
   it('should define the exposed methods', () => {
-    expect(FillSizeAnimationPattern.getSize).toEqual(jasmine.any(Function));
+    expect(instance.getSize).toEqual(jasmine.any(Function));
+  });
+
+  it('should inherit from AnimationPattern', () => {
+    expect(instance instanceof AnimationPattern).toBeTruthy();
   });
 
   describe('getSize', () => {
     const size = '100px';
 
     it('should return height', () => {
-      expect(FillSizeAnimationPattern.getSize(size, true)).toEqual({ height: size });
+      instance.isHeight = true;
+      expect(instance.getSize()).toEqual({ height: size });
     });
 
     it('should return width', () => {
-      expect(FillSizeAnimationPattern.getSize(size, false)).toEqual({ width: size });
+      instance.isHeight = false;
+      expect(instance.getSize()).toEqual({ width: size });
+    });
+  });
+
+  describe('stateList', () => {
+    it('should setup the state list', () => {
+      expect(instance.stateList).toEqual([new State('inactive', new Style()), new State('active', new Style(instance.getSize()))]);
+    });
+
+    it('should setup the transition list', () => {
+      expect(instance.transitionList).toEqual([
+        new Transition('inactive => active', new Animation(this.duration, 'ease-in')),
+        new Transition('active => inactive', new Animation(this.duration, 'ease-out'))
+      ]);
     });
   });
 });
