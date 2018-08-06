@@ -3,9 +3,9 @@ import State from '../../entities/QState';
 import Style from '../../entities/QStyle';
 import Transition from '../../entities/QTransition';
 import Animation from '../../entities/QAnimation';
-import { FadeAnimationPattern, fadeAnimation } from './FadeAnimationPattern';
+import { FadeAnimationPattern, fadeAnimation, fadeInAnimation, fadeOutAnimation } from './FadeAnimationPattern';
 
-const instance: FadeAnimationPattern = new FadeAnimationPattern();
+const instance: FadeAnimationPattern = new FadeAnimationPattern('trigger');
 
 describe('FadeAnimationPattern', () => {
   it('should be a class', () => {
@@ -16,7 +16,7 @@ describe('FadeAnimationPattern', () => {
     expect(instance instanceof FadeAnimationPattern).toBeTruthy();
   });
 
-  it('should inherit from AbstractAnimation', () => {
+  it('should inherit from AnimationPattern', () => {
     expect(instance instanceof AnimationPattern).toBeTruthy();
   });
 
@@ -35,5 +35,17 @@ describe('FadeAnimationPattern', () => {
 describe('fadeAnimation', () => {
   it('should return the trigger', () => {
     expect(fadeAnimation()).toEqual(new FadeAnimationPattern().getTrigger());
+  });
+});
+
+describe('fadeInAnimation', () => {
+  it('should return the trigger', () => {
+    expect(fadeInAnimation()).toEqual(new FadeAnimationPattern('fadeIn', 1, 300, true, false, 0).getTrigger());
+  });
+});
+
+describe('fadeOutAnimation', () => {
+  it('should return the trigger', () => {
+    expect(fadeOutAnimation()).toEqual(new FadeAnimationPattern('fadeOut', 0, 300, false, true, 1).getTrigger());
   });
 });

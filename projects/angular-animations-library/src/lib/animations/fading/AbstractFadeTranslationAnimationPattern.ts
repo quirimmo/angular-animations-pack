@@ -17,7 +17,7 @@ export abstract class FadeTranslationAnimationPattern extends AnimationPattern i
     public isHorizontalTranslation: boolean = true,
     public fadeValue: number = 0,
     public translationValue: string = '0%',
-    public duration: number = 100,
+    public duration: number = 300,
     public includeEnterTransition: boolean = false,
     public includeLeaveTransition: boolean = false,
     public voidFadeValue: number = 1,
