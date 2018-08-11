@@ -63,3 +63,7 @@ export {
   bounceOutUpAnimation,
   bounceOutDownAnimation
 } from './lib/animations/bouncing/BounceVerticalAnimationPattern';
+
+// Folding Animations
+// ================================================================
+export { foldInAnimation } from './lib/animations/folding/FoldingInAnimationPattern';

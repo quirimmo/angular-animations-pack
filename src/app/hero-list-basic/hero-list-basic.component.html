@@ -1,6 +1,6 @@
 <ul>
   <ng-container *ngIf="displayElement()">
-    <li class="hero-list-item" *ngFor="let hero of heroes" [@fillWidth]="hero.state" (click)="hero.toggleState()">
+    <li class="hero-list-item" *ngFor="let hero of heroes" [@foldIn]="hero.state" (click)="hero.toggleState()">
       {{hero.name}}
     </li>
   </ng-container>
@@ -12,6 +12,6 @@
     </button>
   </p>
 </div>
-<div class="red-block" [@fillWidth]="redBlock"  (mouseover)="redBlock = 'active';" (mouseout)="redBlock = 'inactive';">
+<div class="red-block" [@foldIn]="redBlock"  (mouseover)="redBlock = 'active';" (mouseout)="redBlock = 'inactive';">
   RED BLOCK
 </div>
