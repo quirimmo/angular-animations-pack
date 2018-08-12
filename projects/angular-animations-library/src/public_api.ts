@@ -66,4 +66,4 @@ export {
 
 // Folding Animations
 // ================================================================
-export { foldInAnimation } from './lib/animations/folding/FoldingInAnimationPattern';
+export { foldInAnimation, foldOutAnimation } from './lib/animations/folding/FoldingInAnimationPattern';

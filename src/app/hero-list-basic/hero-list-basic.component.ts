@@ -21,14 +21,16 @@ import {
   bounceOutUpAnimation,
   bounceOutDownAnimation,
   appearAnimation,
-  foldInAnimation
+  foldInAnimation,
+  foldOutAnimation
 } from 'projects/angular-animations-library/src/public_api';
 import {
   bounceInDownAnimationValue,
   appearAnimationValue,
   fillWidthAnimationValue,
   fillHeightAnimationValue,
-  foldInAnimationValue
+  foldInAnimationValue,
+  foldOutAnimationValue
 } from './custom-animations';
 
 @Component({
@@ -50,7 +52,8 @@ import {
     appearAnimationValue,
     fillWidthAnimationValue,
     fillHeightAnimationValue,
-    foldInAnimationValue
+    foldInAnimationValue,
+    foldOutAnimationValue
 
     // fillOutWidthAnimationValue
     // bounceInRightAnimation(),
