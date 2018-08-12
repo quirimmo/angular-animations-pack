@@ -9,14 +9,14 @@ import { BUILT_IN_ANIMATIONS_TIMING } from '../../entities/QAnimationsMetadata';
 import { AnimationTriggerMetadata } from '@angular/animations';
 
 export function foldInAnimation(params: CommonAnimationParameters = {}): AnimationTriggerMetadata {
-  return new FoldAnimationPattern('foldIn', params.duration, true, false).getTrigger();
+  return new FoldAnimationPattern('foldIn', params.duration, false, false).getTrigger();
 }
 
 export function foldOutAnimation(params: CommonAnimationParameters = {}): AnimationTriggerMetadata {
-  return new FoldAnimationPattern('foldOut', params.duration, false, true).getTrigger();
+  return new FoldAnimationPattern('foldOut', params.duration, false, false).getTrigger();
 }
 
-class FoldAnimationPattern extends AnimationPattern implements IAnimationPatternActions {
+export default class FoldAnimationPattern extends AnimationPattern implements IAnimationPatternActions {
   constructor(
     public trigger: string = 'fold',
     public duration: number = BUILT_IN_ANIMATIONS_TIMING,

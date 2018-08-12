@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build-library": "ng build angular-animations-library --prod",
+    "test-library": "ng test angular-animations-library"
   },
   "private": true,
   "dependencies": {
