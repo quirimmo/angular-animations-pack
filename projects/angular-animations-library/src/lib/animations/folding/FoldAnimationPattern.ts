@@ -16,7 +16,7 @@ export function foldOutAnimation(params: CommonAnimationParameters = {}): Animat
   return new FoldAnimationPattern('foldOut', params.duration, false, false).getTrigger();
 }
 
-export default class FoldAnimationPattern extends AnimationPattern implements IAnimationPatternActions {
+export class FoldAnimationPattern extends AnimationPattern implements IAnimationPatternActions {
   constructor(
     public trigger: string = 'fold',
     public duration: number = BUILT_IN_ANIMATIONS_TIMING,

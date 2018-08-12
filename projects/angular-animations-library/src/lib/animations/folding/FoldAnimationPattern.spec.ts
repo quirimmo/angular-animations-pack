@@ -2,8 +2,7 @@ import State from '../../entities/QState';
 import Style from '../../entities/QStyle';
 import Transition from '../../entities/QTransition';
 import Animation from '../../entities/QAnimation';
-import { foldInAnimation, foldOutAnimation } from './FoldAnimationPattern';
-import FoldAnimationPattern from './FoldAnimationPattern';
+import { FoldAnimationPattern, foldInAnimation, foldOutAnimation } from './FoldAnimationPattern';
 import AnimationPattern from '../../entities/QAnimationPattern';
 
 const instance: FoldAnimationPattern = new FoldAnimationPattern();
