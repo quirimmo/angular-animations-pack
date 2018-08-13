@@ -1,60 +1,92 @@
 import { Component, Input } from '@angular/core';
 
 import { Hero } from './hero.service';
-import { fadeInAnimationFn, fadeOutAnimationFn } from 'projects/angular-animations-library/src/public_api';
-// import { highlightAnimationFn } from 'angular-animations-library';
-
-// import { highlightAnimation } from 'angular-animations-library';
-// import { highlightAnimation } from 'angular-animations-library';
-// import { appearAnimationFn } from 'projects/angular-animations-library/src/public_api';
-// import { appearAnimationFn } from 'angular-animations-library';
-
-// import { appearAnimationFunzione } from 'angular-animations-library';
-// import { appearAnimationFunzione } from 'projects/angular-animations-library/src/public_api';
-// import { appearAnimationFunzione } from 'dist/angular-animations-library/public_api';
-// import { appearAnimationFn } from 'projects/angular-animations-library/src/public_api';
-// import { appearAnimationFn } from 'dist/angular-animations-library';
-// import { appearAnimationFn } from 'dist/angular-animations-library/';
-
-// import {
-//   highlightAnimationFn,
-//   scaleAnimationFn,
-//   flyHorizontalAnimationFn,
-//   flyVerticalAnimationFn,
-//   fillWidthAnimationFn,
-//   fillHeightAnimationFn,
-//   rotateAnimationFn,
-//   fadeAnimationFn,
-//   bounceVerticalAnimationFn,
-//   bounceHorizontalAnimationFn,
-//   appearAnimationFn
-// } from '../angular-animations-pack/angular-animations-pack.module';
+import {
+  fadeInAnimation,
+  fadeOutAnimation,
+  fadeInLeftAnimation,
+  fadeInRightAnimation,
+  fadeInDownAnimation,
+  fadeOutLeftAnimation,
+  fadeOutRightAnimation,
+  fadeOutUpAnimation,
+  fadeOutDownAnimation,
+  bounceInLeftAnimation,
+  bounceInRightAnimation,
+  fadeInUpAnimation,
+  bounceOutLeftAnimation,
+  bounceOutRightAnimation,
+  bounceInUpAnimation,
+  bounceInDownAnimation,
+  bounceOutUpAnimation,
+  bounceOutDownAnimation,
+  appearAnimation,
+  foldInAnimation,
+  foldOutAnimation
+} from 'projects/angular-animations-library/src/public_api';
+import {
+  bounceInDownAnimationValue,
+  appearAnimationValue,
+  fillWidthAnimationValue,
+  fillHeightAnimationValue,
+  foldInAnimationValue,
+  foldOutAnimationValue
+} from './custom-animations';
 
 @Component({
   selector: 'app-hero-list-basic',
   templateUrl: './hero-list-basic.component.html',
   styleUrls: ['./hero-list-basic.component.css'],
   animations: [
-    fadeInAnimationFn(),
-    fadeOutAnimationFn()
-    // fadeInAnimationFn()
-    // highlightAnimationFn({}),
+    fadeOutDownAnimation(),
+    fadeOutUpAnimation(),
+    fadeOutRightAnimation(),
+    fadeOutLeftAnimation(),
+    fadeInUpAnimation(),
+    fadeInDownAnimation(),
+    fadeInRightAnimation(),
+    fadeInLeftAnimation(),
+    fadeInAnimation(),
+    fadeOutAnimation(),
+    bounceInDownAnimationValue,
+    appearAnimationValue,
+    fillWidthAnimationValue,
+    fillHeightAnimationValue,
+    foldInAnimationValue,
+    foldOutAnimationValue
+
+    // fillOutWidthAnimationValue
+    // bounceInRightAnimation(),
+    // bounceInLeftAnimation(),
+    // bounceOutLeftAnimation(),
+    // bounceOutRightAnimation(),
+    // bounceInUpAnimation(),
+    // bounceInDownAnimation(),
+    // bounceOutUpAnimation(),
+    // bounceOutDownAnimation(),
+
+    // bounceInRightAnimation(),
+    // bounceInLeftAnimation(),
+
+    // bounceOutUpAnimation()
+    // bounceInUpAnimation()
+    // highlightAnimation({}),
     //
     // highlightAnimation
     // appearAnimation(),
-    // appearAnimationFn()
+    // appearAnimation()
     // // appearAnimationFunzione()
-    // highlightAnimationFn(),
-    // scaleAnimationFn({ includeVoidTransitions: true, scaleVoidValue: 0, duration: 1000 }),
+    // highlightAnimation(),
+    // scaleAnimation({ includeVoidTransitions: true, scaleVoidValue: 0, duration: 1000 }),
     // appearAnimationFunzione({ duration: 100 })
     //
-    // fillWidthAnimationFn({ size: '100px' }),
-    // fillHeightAnimationFn({ size: '50px' })
-    // flyVerticalAnimationFn({ includeVoidTransitions: true }),
-    // flyHorizontalAnimationFn({ includeVoidTransitions: true })
-    // rotateAnimationFn({ includeVoidTransitions: true })
-    // fadeAnimationFn({ includeVoidTransitions: true, voidFadeValue: 0.5 })
-    // bounceVerticalAnimationFn({
+    // fillWidthAnimation({ size: '100px' }),
+    // fillHeightAnimation({ size: '50px' })
+    // flyVerticalAnimation({ includeVoidTransitions: true }),
+    // flyHorizontalAnimation({ includeVoidTransitions: true })
+    // rotateAnimation({ includeVoidTransitions: true })
+    // fadeAnimation({ includeVoidTransitions: true, voidFadeValue: 0.5 })
+    // bounceVerticalAnimation({
     //   includeVoidTransitions: true,
     //   animationStyleProperties: [
     //     { opacity: 0, translation: '-100%', offset: 0 },
@@ -62,7 +94,7 @@ import { fadeInAnimationFn, fadeOutAnimationFn } from 'projects/angular-animatio
     //     { opacity: 1, translation: '0', offset: 1.0 }
     //   ]
     // }),
-    // bounceHorizontalAnimationFn({
+    // bounceHorizontalAnimation({
     //   includeVoidTransitions: true,
     //   animationStyleProperties: [
     //     { opacity: 0, translation: '-100%', offset: 0 },

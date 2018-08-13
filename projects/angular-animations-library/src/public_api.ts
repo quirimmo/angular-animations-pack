@@ -1,31 +1,69 @@
-import { highlightAnimation } from './lib/animations/HighlightAnimationPattern';
-import { scaleAnimation } from './lib/animations/ScaleAnimationPattern';
-import { flyHorizontalAnimation } from './lib/animations/FlyHorizontalAnimationPattern';
-import { flyVerticalAnimation } from './lib/animations/FlyVerticalAnimationPattern';
-import { rotateAnimation } from './lib/animations/RotateAnimationPattern';
-import { fadeAnimation } from './lib/animations/FadeAnimationPattern';
-import { bounceVerticalAnimation } from './lib/animations/BounceVerticalAnimationPattern';
-import { bounceHorizontalAnimation } from './lib/animations/BounceHorizontalAnimationPattern';
-import { fillWidthAnimation } from './lib/animations/FillWidthAnimationPattern';
-import { appearAnimation } from './lib/animations/AppearAnimationPattern';
-import { fillHeightAnimation } from './lib/animations/FillHeightAnimationPattern';
-import { fadeInAnimation } from './lib/animations/FadeInAnimationPattern';
-import { fadeOutAnimation } from './lib/animations/FadeOutAnimationPattern';
 /*
  * Public API Surface of angular-animations-library
  */
 export * from './lib/angular-animations-library.module';
 
-export const highlightAnimationFn = highlightAnimation;
-export const scaleAnimationFn = scaleAnimation;
-export const flyHorizontalAnimationFn = flyHorizontalAnimation;
-export const flyVerticalAnimationFn = flyVerticalAnimation;
-export const rotateAnimationFn = rotateAnimation;
-export const fadeAnimationFn = fadeAnimation;
-export const fadeInAnimationFn = fadeInAnimation;
-export const fadeOutAnimationFn = fadeOutAnimation;
-export const bounceVerticalAnimationFn = bounceVerticalAnimation;
-export const bounceHorizontalAnimationFn = bounceHorizontalAnimation;
-export const fillWidthAnimationFn = fillWidthAnimation;
-export const fillHeightAnimationFn = fillHeightAnimation;
-export const appearAnimationFn = appearAnimation;
+// // Highlighting Animations
+// // ================================================================
+export { highlightAnimation } from './lib/animations/highlighting/HighlightAnimationPattern';
+
+// Scaling Animations
+// ================================================================
+export { scaleAnimation } from './lib/animations/scaling/ScaleAnimationPattern';
+
+// Flying Animations
+// ================================================================
+export { flyHorizontalAnimation } from './lib/animations/flying/FlyHorizontalAnimationPattern';
+export { flyVerticalAnimation } from './lib/animations/flying/FlyVerticalAnimationPattern';
+
+// Rotating Animations
+// ================================================================
+export { rotateAnimation } from './lib/animations/rotating/RotateAnimationPattern';
+
+// Filling Animations
+// ================================================================
+export { fillWidthAnimation } from './lib/animations/filling/FillWidthAnimationPattern';
+export { fillHeightAnimation } from './lib/animations/filling/FillHeightAnimationPattern';
+
+// Appearing Animations
+// ================================================================
+export { appearAnimation } from './lib/animations/appearing/AppearAnimationPattern';
+
+// Fading Animations
+// ================================================================
+export { fadeAnimation, fadeInAnimation, fadeOutAnimation } from './lib/animations/fading/FadeAnimationPattern';
+export {
+  fadeHorizontalTranslationAnimation,
+  fadeInLeftAnimation,
+  fadeInRightAnimation,
+  fadeOutLeftAnimation,
+  fadeOutRightAnimation
+} from './lib/animations/fading/FadeHorizontalTranslationAnimationPattern';
+export {
+  fadeVerticalTranslationAnimation,
+  fadeInUpAnimation,
+  fadeInDownAnimation,
+  fadeOutUpAnimation,
+  fadeOutDownAnimation
+} from './lib/animations/fading/FadeVerticalTranslationAnimationPattern';
+
+// Bouncing Animations
+// ================================================================
+export {
+  bounceHorizontalAnimation,
+  bounceInLeftAnimation,
+  bounceInRightAnimation,
+  bounceOutLeftAnimation,
+  bounceOutRightAnimation
+} from './lib/animations/bouncing/BounceHorizontalAnimationPattern';
+export {
+  bounceVerticalAnimation,
+  bounceInUpAnimation,
+  bounceInDownAnimation,
+  bounceOutUpAnimation,
+  bounceOutDownAnimation
+} from './lib/animations/bouncing/BounceVerticalAnimationPattern';
+
+// Folding Animations
+// ================================================================
+export { foldInAnimation, foldOutAnimation } from './lib/animations/folding/FoldAnimationPattern';
